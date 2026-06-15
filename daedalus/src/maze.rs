@@ -1,4 +1,6 @@
-#[derive(Clone)]
+use serde::Serialize;
+
+#[derive(Clone, Serialize)]
 pub struct Cell {
     pub visited: bool,
     pub north: bool,
@@ -19,6 +21,7 @@ impl Cell {
     }
 }
 
+#[derive(Serialize)]
 pub struct Maze {
     pub width: usize,
     pub height: usize,
