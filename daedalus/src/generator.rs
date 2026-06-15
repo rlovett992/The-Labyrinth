@@ -12,7 +12,12 @@ enum Direction {
 
 pub fn generate_maze(width: usize, height: usize) -> Maze {
     let mut maze = Maze::new(width, height);
+
     carve_from(0, 0, &mut maze);
+
+    maze.cells[0][0].west = false;
+    maze.cells[height - 1][width - 1].east = false;
+
     maze
 }
 
