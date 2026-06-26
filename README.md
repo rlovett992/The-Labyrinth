@@ -10,12 +10,11 @@ A maze generator.
 
 ### Current Status
 
-Daedalus can generate and export mazes.
+Daedalus can generate and export mazes with a random size.
 
 ### Next Feature(s) to be Added
 
 - The difficulty selector for the mazes
-- Variable height/width
 - Square only mode
 
 ---
