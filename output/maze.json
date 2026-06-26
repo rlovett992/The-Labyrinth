@@ -1,11 +1,32 @@
 {
-  "width": 10,
-  "height": 10,
+  "width": 37,
+  "height": 37,
   "cells": [
     [
       {
         "visited": true,
         "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
         "east": false,
         "south": true,
         "west": false
@@ -15,6 +36,69 @@
         "north": true,
         "east": false,
         "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
         "west": false
       },
       {
@@ -55,8 +139,6377 @@
       {
         "visited": true,
         "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
         "east": true,
         "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      }
+    ],
+    [
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      }
+    ],
+    [
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      }
+    ],
+    [
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      }
+    ],
+    [
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      }
+    ],
+    [
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      }
+    ],
+    [
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      }
+    ],
+    [
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      }
+    ],
+    [
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      }
+    ],
+    [
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      }
+    ],
+    [
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false
+      }
+    ],
+    [
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      }
+    ],
+    [
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      }
+    ],
+    [
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      }
+    ],
+    [
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      }
+    ],
+    [
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      }
+    ],
+    [
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false
+      }
+    ],
+    [
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      }
+    ],
+    [
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      }
+    ],
+    [
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      }
+    ],
+    [
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      }
+    ],
+    [
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      }
+    ],
+    [
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      }
+    ],
+    [
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      }
+    ],
+    [
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
         "west": false
       },
       {
@@ -84,6 +6537,69 @@
       },
       {
         "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
         "north": true,
         "east": true,
         "south": false,
@@ -94,6 +6610,372 @@
         "north": false,
         "east": false,
         "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      }
+    ],
+    [
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
         "west": true
       },
       {
@@ -119,6 +7001,614 @@
       },
       {
         "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      }
+    ],
+    [
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false
+      }
+    ],
+    [
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      }
+    ],
+    [
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
         "north": true,
         "east": true,
         "south": true,
@@ -134,6 +7624,724 @@
       {
         "visited": true,
         "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      }
+    ],
+    [
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false
+      }
+    ],
+    [
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
         "east": true,
         "south": false,
         "west": true
@@ -149,41 +8357,6 @@
     [
       {
         "visited": true,
-        "north": false,
-        "east": true,
-        "south": false,
-        "west": true
-      },
-      {
-        "visited": true,
-        "north": false,
-        "east": false,
-        "south": true,
-        "west": true
-      },
-      {
-        "visited": true,
-        "north": true,
-        "east": false,
-        "south": true,
-        "west": false
-      },
-      {
-        "visited": true,
-        "north": true,
-        "east": false,
-        "south": true,
-        "west": false
-      },
-      {
-        "visited": true,
-        "north": false,
-        "east": true,
-        "south": false,
-        "west": false
-      },
-      {
-        "visited": true,
         "north": true,
         "east": false,
         "south": false,
@@ -206,6 +8379,55 @@
       {
         "visited": true,
         "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
         "east": true,
         "south": false,
         "west": true
@@ -216,6 +8438,181 @@
         "east": true,
         "south": false,
         "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
       }
     ],
     [
@@ -243,6 +8640,675 @@
       {
         "visited": true,
         "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false
+      }
+    ],
+    [
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      }
+    ],
+    [
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
         "east": true,
         "south": true,
         "west": false
@@ -264,6 +9330,41 @@
       {
         "visited": true,
         "north": true,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
         "east": false,
         "south": true,
         "west": true
@@ -277,9 +9378,16 @@
       },
       {
         "visited": true,
-        "north": false,
-        "east": true,
+        "north": true,
+        "east": false,
         "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": true,
+        "south": false,
         "west": false
       },
       {
@@ -294,9 +9402,23 @@
       {
         "visited": true,
         "north": false,
-        "east": true,
-        "south": false,
+        "east": false,
+        "south": true,
         "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
       },
       {
         "visited": true,
@@ -304,34 +9426,6 @@
         "east": false,
         "south": true,
         "west": true
-      },
-      {
-        "visited": true,
-        "north": true,
-        "east": false,
-        "south": true,
-        "west": false
-      },
-      {
-        "visited": true,
-        "north": true,
-        "east": false,
-        "south": false,
-        "west": false
-      },
-      {
-        "visited": true,
-        "north": true,
-        "east": false,
-        "south": true,
-        "west": false
-      },
-      {
-        "visited": true,
-        "north": true,
-        "east": false,
-        "south": false,
-        "west": false
       },
       {
         "visited": true,
@@ -349,57 +9443,6 @@
       },
       {
         "visited": true,
-        "north": true,
-        "east": true,
-        "south": false,
-        "west": false
-      },
-      {
-        "visited": true,
-        "north": false,
-        "east": true,
-        "south": false,
-        "west": true
-      }
-    ],
-    [
-      {
-        "visited": true,
-        "north": false,
-        "east": true,
-        "south": false,
-        "west": true
-      },
-      {
-        "visited": true,
-        "north": true,
-        "east": false,
-        "south": false,
-        "west": true
-      },
-      {
-        "visited": true,
-        "north": true,
-        "east": true,
-        "south": false,
-        "west": false
-      },
-      {
-        "visited": true,
-        "north": false,
-        "east": true,
-        "south": false,
-        "west": true
-      },
-      {
-        "visited": true,
-        "north": true,
-        "east": false,
-        "south": false,
-        "west": true
-      },
-      {
-        "visited": true,
         "north": false,
         "east": true,
         "south": true,
@@ -409,261 +9452,8 @@
         "visited": true,
         "north": true,
         "east": false,
-        "south": false,
-        "west": true
-      },
-      {
-        "visited": true,
-        "north": true,
-        "east": true,
-        "south": false,
-        "west": false
-      },
-      {
-        "visited": true,
-        "north": false,
-        "east": false,
         "south": true,
         "west": true
-      },
-      {
-        "visited": true,
-        "north": false,
-        "east": true,
-        "south": false,
-        "west": false
-      }
-    ],
-    [
-      {
-        "visited": true,
-        "north": false,
-        "east": true,
-        "south": false,
-        "west": true
-      },
-      {
-        "visited": true,
-        "north": false,
-        "east": true,
-        "south": false,
-        "west": true
-      },
-      {
-        "visited": true,
-        "north": false,
-        "east": true,
-        "south": false,
-        "west": true
-      },
-      {
-        "visited": true,
-        "north": false,
-        "east": true,
-        "south": false,
-        "west": true
-      },
-      {
-        "visited": true,
-        "north": false,
-        "east": true,
-        "south": false,
-        "west": true
-      },
-      {
-        "visited": true,
-        "north": true,
-        "east": true,
-        "south": false,
-        "west": true
-      },
-      {
-        "visited": true,
-        "north": false,
-        "east": true,
-        "south": false,
-        "west": true
-      },
-      {
-        "visited": true,
-        "north": false,
-        "east": true,
-        "south": false,
-        "west": true
-      },
-      {
-        "visited": true,
-        "north": true,
-        "east": false,
-        "south": false,
-        "west": true
-      },
-      {
-        "visited": true,
-        "north": false,
-        "east": true,
-        "south": true,
-        "west": false
-      }
-    ],
-    [
-      {
-        "visited": true,
-        "north": false,
-        "east": false,
-        "south": true,
-        "west": true
-      },
-      {
-        "visited": true,
-        "north": false,
-        "east": true,
-        "south": true,
-        "west": false
-      },
-      {
-        "visited": true,
-        "north": false,
-        "east": true,
-        "south": false,
-        "west": true
-      },
-      {
-        "visited": true,
-        "north": false,
-        "east": true,
-        "south": true,
-        "west": true
-      },
-      {
-        "visited": true,
-        "north": false,
-        "east": true,
-        "south": false,
-        "west": true
-      },
-      {
-        "visited": true,
-        "north": false,
-        "east": false,
-        "south": false,
-        "west": true
-      },
-      {
-        "visited": true,
-        "north": false,
-        "east": true,
-        "south": true,
-        "west": false
-      },
-      {
-        "visited": true,
-        "north": false,
-        "east": true,
-        "south": false,
-        "west": true
-      },
-      {
-        "visited": true,
-        "north": false,
-        "east": false,
-        "south": true,
-        "west": true
-      },
-      {
-        "visited": true,
-        "north": true,
-        "east": true,
-        "south": false,
-        "west": false
-      }
-    ],
-    [
-      {
-        "visited": true,
-        "north": true,
-        "east": false,
-        "south": false,
-        "west": true
-      },
-      {
-        "visited": true,
-        "north": true,
-        "east": true,
-        "south": true,
-        "west": false
-      },
-      {
-        "visited": true,
-        "north": false,
-        "east": false,
-        "south": true,
-        "west": true
-      },
-      {
-        "visited": true,
-        "north": true,
-        "east": true,
-        "south": false,
-        "west": false
-      },
-      {
-        "visited": true,
-        "north": false,
-        "east": true,
-        "south": false,
-        "west": true
-      },
-      {
-        "visited": true,
-        "north": false,
-        "east": false,
-        "south": true,
-        "west": true
-      },
-      {
-        "visited": true,
-        "north": true,
-        "east": true,
-        "south": false,
-        "west": false
-      },
-      {
-        "visited": true,
-        "north": false,
-        "east": true,
-        "south": false,
-        "west": true
-      },
-      {
-        "visited": true,
-        "north": true,
-        "east": false,
-        "south": false,
-        "west": true
-      },
-      {
-        "visited": true,
-        "north": false,
-        "east": true,
-        "south": true,
-        "west": false
-      }
-    ],
-    [
-      {
-        "visited": true,
-        "north": false,
-        "east": false,
-        "south": true,
-        "west": true
-      },
-      {
-        "visited": true,
-        "north": true,
-        "east": false,
-        "south": true,
-        "west": false
       },
       {
         "visited": true,
@@ -696,6 +9486,34 @@
       {
         "visited": true,
         "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
         "east": true,
         "south": true,
         "west": false
@@ -710,6 +9528,20 @@
       {
         "visited": true,
         "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": true,
         "east": false,
         "south": true,
         "west": false
@@ -717,6 +9549,111 @@
       {
         "visited": true,
         "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      {
+        "visited": true,
+        "north": false,
         "east": false,
         "south": true,
         "west": false
