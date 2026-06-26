@@ -12,8 +12,9 @@ use std::io::{self, Write};
 
 fn main() -> std::io::Result<()> {
     let difficulty = choose_difficulty()?;
-    let size = difficulty.random_size();
-    let maze = generate_maze(size, size);
+    let width = difficulty.random_size();
+    let height = difficulty.random_size();
+    let maze = generate_maze(width, height);
 
     fs::create_dir_all("output")?;
 
