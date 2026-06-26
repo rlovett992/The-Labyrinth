@@ -19,4 +19,13 @@ impl Difficulty {
             Difficulty::Labyrinthian => rng.random_range(250..=1000),
         }
     }
+
+    pub fn label(self) -> &'static str {
+        match self {
+            Difficulty::Easy => "Easy",
+            Difficulty::Medium => "Medium",
+            Difficulty::Hard => "Hard",
+            Difficulty::Labyrinthian => "Labyrinthian",
+        }
+    }
 }

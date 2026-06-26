@@ -13,7 +13,7 @@ enum Direction {
 pub fn generate_maze(width: usize, height: usize) -> Maze {
     let mut maze = Maze::new(width, height);
 
-    carve_from(0, 0, &mut maze);
+    carve_iterative(&mut maze);
 
     maze.cells[0][0].west = false;
     maze.cells[height - 1][width - 1].east = false;
@@ -21,69 +21,94 @@ pub fn generate_maze(width: usize, height: usize) -> Maze {
     maze
 }
 
-fn carve_from(x: usize, y: usize, maze: &mut Maze) {
-    maze.cells[y][x].visited = true;
-
-    let mut directions = [
-        Direction::North,
-        Direction::East,
-        Direction::South,
-        Direction::West,
-    ];
-
+fn carve_iterative(maze: &mut Maze) {
     let mut rng = rand::rng();
-    directions.shuffle(&mut rng);
+    let mut stack = Vec::new();
 
-    for direction in directions {
-        let Some((next_x, next_y)) = get_neighbor(x, y, direction, maze.width, maze.height) else {
-            continue;
-        };
+    maze.cells[0][0].visited = true;
+    stack.push((0, 0));
 
-        if !maze.cells[next_y][next_x].visited {
-            remove_wall(x, y, next_x, next_y, direction, maze);
-            carve_from(next_x, next_y, maze);
+    while let Some(&(x, y)) = stack.last() {
+        let mut directions = [
+            Direction::North,
+            Direction::East,
+            Direction::South,
+            Direction::West,
+        ];
+
+        directions.shuffle(&mut rng);
+
+        let mut carved = false;
+
+        for direction in directions {
+            let Some((next_x, next_y)) =
+                get_neighbor(x, y, direction, maze.width, maze.height)
+            else {
+                continue;
+            };
+
+            if !maze.cells[next_y][next_x].visited {
+                remove_wall(x, y, next_x, next_y, direction, maze);
+                maze.cells[next_y][next_x].visited = true;
+                stack.push((next_x, next_y));
+                carved = true;
+                break;
+            }
+        }
+
+        if !carved {
+            stack.pop();
         }
     }
 }
 
-fn get_neighbor(x: usize, y: usize, direction: Direction, width: usize, height: usize,) -> Option<(usize, usize)> {
+fn get_neighbor(
+    x: usize,
+    y: usize,
+    direction: Direction,
+    width: usize,
+    height: usize,
+) -> Option<(usize, usize)> {
     match direction {
         Direction::North => {
             if y > 0 {
                 Some((x, y - 1))
-            }
-            else {
+            } else {
                 None
             }
         }
         Direction::East => {
             if x + 1 < width {
                 Some((x + 1, y))
-            }
-            else {
+            } else {
                 None
             }
         }
         Direction::South => {
             if y + 1 < height {
                 Some((x, y + 1))
-            }
-            else {
+            } else {
                 None
             }
         }
         Direction::West => {
             if x > 0 {
                 Some((x - 1, y))
-            }
-            else {
+            } else {
                 None
             }
         }
     }
 }
 
-fn remove_wall(x: usize, y: usize, next_x: usize, next_y: usize, direction: Direction, maze: &mut Maze,) {
+fn remove_wall(
+    x: usize,
+    y: usize,
+    next_x: usize,
+    next_y: usize,
+    direction: Direction,
+    maze: &mut Maze,
+) {
     match direction {
         Direction::North => {
             maze.cells[y][x].north = false;
