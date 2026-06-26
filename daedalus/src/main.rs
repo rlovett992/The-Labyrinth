@@ -1,11 +1,6 @@
-mod exporter;
-mod generator;
-mod maze;
-mod config;
-
-use config::Difficulty;
-use exporter::{export_json, export_svg};
-use generator::generate_maze;
+use daedalus::config::Difficulty;
+use daedalus::exporter::{export_json, export_svg};
+use daedalus::generator::generate_maze;
 use std::fs;
 use std::io::{self, Write};
 
