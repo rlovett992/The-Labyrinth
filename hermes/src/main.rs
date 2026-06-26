@@ -24,8 +24,7 @@ async fn generate(
         "hard" => Difficulty::Hard,
         "labyrinthian" => Difficulty::Labyrinthian,
         _ => {
-            ctx.say("Invalid difficulty. Use easy, medium, hard, or labyrinthian.")
-                .await?;
+            ctx.say("Invalid difficulty. Use easy, medium, hard, or labyrinthian.").await?;
             return Ok(());
         }
     };
@@ -93,6 +92,8 @@ async fn main() {
         .framework(framework)
         .await
         .expect("Failed to create Discord client");
+
+    println!("Hermes is online.");
 
     client.start().await.expect("Discord client error");
 }
