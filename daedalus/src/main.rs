@@ -1,6 +1,7 @@
 use daedalus::config::Difficulty;
 use daedalus::exporter::{export_json, export_svg};
 use daedalus::generator::generate_maze;
+use daedalus::validator;
 use std::fs;
 use std::io::{self, Write};
 
@@ -18,6 +19,8 @@ fn main() -> std::io::Result<()> {
     };
 
     let maze = generate_maze(width, height);
+
+    validator::validate_maze(&maze).expect("Generated maze failed to valiadte");
 
     fs::create_dir_all("output")?;
 
