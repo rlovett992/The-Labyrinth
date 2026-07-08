@@ -2,7 +2,8 @@ use std::fs;
 use std::io;
 
 use crate::maze::maze::Maze;
-use crate::solver::bfs::Position;
+use crate::solver::solver::Position;
+
 
 /// Shared renderer used by all algorithms.
 fn export_solution_svg(maze: &Maze, path: &[Position], output_path: &str) -> io::Result<()> {
