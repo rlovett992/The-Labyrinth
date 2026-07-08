@@ -35,11 +35,7 @@ pub fn solve(maze: &Maze) -> Option<Vec<Position>> {
     None
 }
 
-fn reconstruct_path(
-    came_from: HashMap<Position, Position>,
-    start: Position,
-    goal: Position,
-) -> Vec<Position> {
+fn reconstruct_path(came_from: HashMap<Position, Position>, start: Position, goal: Position) -> Vec<Position> {
     let mut path = vec![goal];
     let mut current = goal;
 

@@ -81,11 +81,7 @@ fn heuristic(position: Position, goal: Position) -> usize {
     position.0.abs_diff(goal.0) + position.1.abs_diff(goal.1)
 }
 
-fn reconstruct_path(
-    came_from: HashMap<Position, Position>,
-    start: Position,
-    goal: Position,
-) -> Vec<Position> {
+fn reconstruct_path(came_from: HashMap<Position, Position>, start: Position, goal: Position) -> Vec<Position> {
     let mut path = vec![goal];
     let mut current = goal;
 

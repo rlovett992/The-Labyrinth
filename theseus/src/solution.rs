@@ -5,11 +5,7 @@ use crate::maze::maze::Maze;
 use crate::solver::bfs::Position;
 
 /// Shared renderer used by all algorithms.
-fn export_solution_svg(
-    maze: &Maze,
-    path: &[Position],
-    output_path: &str,
-) -> io::Result<()> {
+fn export_solution_svg(maze: &Maze, path: &[Position], output_path: &str) -> io::Result<()> {
     let cell_size = 20;
     let stroke_width = 2;
 
@@ -88,47 +84,19 @@ fn export_solution_svg(
 }
 
 /// Export a BFS solution.
-pub fn export_solution_svg_bfs(
-    maze: &Maze,
-    path: &[Position],
-) -> io::Result<()> {
-    export_solution_svg(
-        maze,
-        path,
-        "output/solved_maze_bfs.svg",
-    )
+pub fn export_solution_svg_bfs(maze: &Maze, path: &[Position]) -> io::Result<()> {
+    export_solution_svg(maze, path, "output/solved_maze_bfs.svg")
 }
 
 /// Export a DFS solution.
-pub fn export_solution_svg_dfs(
-    maze: &Maze,
-    path: &[Position],
-) -> io::Result<()> {
-    export_solution_svg(
-        maze,
-        path,
-        "output/solved_maze_dfs.svg",
-    )
+pub fn export_solution_svg_dfs(maze: &Maze, path: &[Position]) -> io::Result<()> {
+    export_solution_svg(maze, path, "output/solved_maze_dfs.svg")
 }
 
-pub fn export_solution_svg_astar(
-    maze: &Maze,
-    path: &[Position],
-) -> io::Result<()> {
-    export_solution_svg(
-        maze,
-        path,
-        "output/solved_maze_astar.svg",
-    )
+pub fn export_solution_svg_astar(maze: &Maze, path: &[Position]) -> io::Result<()> {
+    export_solution_svg(maze, path, "output/solved_maze_astar.svg")
 }
 
-pub fn export_solution_svg_random(
-    maze: &Maze,
-    path: &[Position],
-) -> io::Result<()> {
-    export_solution_svg(
-        maze,
-        path,
-        "output/solved_maze_random.svg",
-    )
+pub fn export_solution_svg_random(maze: &Maze, path: &[Position]) -> io::Result<()> {
+    export_solution_svg(maze, path, "output/solved_maze_random.svg")
 }
