@@ -4,6 +4,8 @@ use daedalus::generator::generate_maze;
 
 use poise::serenity_prelude as serenity;
 use std::fs;
+use std::path::PathBuf;
+use tokio::process::Command;
 
 struct Data;
 
@@ -24,7 +26,8 @@ async fn generate(
         "hard" => Difficulty::Hard,
         "labyrinthian" => Difficulty::Labyrinthian,
         _ => {
-            ctx.say("Invalid difficulty. Use easy, medium, hard, or labyrinthian.").await?;
+            ctx.say("Invalid difficulty. Use easy, medium, hard, or labyrinthian.")
+                .await?;
             return Ok(());
         }
     };
@@ -66,6 +69,56 @@ async fn generate(
     Ok(())
 }
 
+#[poise::command(slash_command)]
+async fn theseus(ctx: Context<'_>) -> Result<(), Error> {
+    ctx.defer().await?;
+
+    // Move from target/debug back to the workspace root.
+    let workspace = PathBuf::from(env!("CARGO_MANIFEST_DIR"))
+        .parent()
+        .unwrap()
+        .to_path_buf();
+
+    let output = Command::new("cargo")
+        .current_dir(&workspace)
+        .args(["run", "-p", "theseus"])
+        .output()
+        .await?;
+
+    let stdout = String::from_utf8_lossy(&output.stdout);
+    let stderr = String::from_utf8_lossy(&output.stderr);
+
+    if !output.status.success() {
+        ctx.say(format!(
+            "Theseus failed.\n```text\n{}\n{}\n```",
+            stdout, stderr
+        ))
+        .await?;
+
+        return Ok(());
+    }
+
+    let bfs_svg = workspace.join("output/solved_maze_bfs.svg");
+    let dfs_svg = workspace.join("output/solved_maze_dfs.svg");
+
+    let mut reply = poise::CreateReply::default().content(format!(
+        "Theseus completed successfully.\n```text\n{}\n```",
+        stdout
+    ));
+
+    if bfs_svg.exists() {
+        reply = reply.attachment(serenity::CreateAttachment::path(&bfs_svg).await?);
+    }
+
+    if dfs_svg.exists() {
+        reply = reply.attachment(serenity::CreateAttachment::path(&dfs_svg).await?);
+    }
+
+    ctx.send(reply).await?;
+
+    Ok(())
+}
+
 #[tokio::main]
 async fn main() {
     dotenvy::dotenv().ok();
@@ -77,12 +130,20 @@ async fn main() {
 
     let framework = poise::Framework::builder()
         .options(poise::FrameworkOptions {
-            commands: vec![generate()],
+            commands: vec![
+                generate(),
+                theseus(),
+            ],
             ..Default::default()
         })
         .setup(|ctx, _ready, framework| {
             Box::pin(async move {
-                poise::builtins::register_globally(ctx, &framework.options().commands).await?;
+                poise::builtins::register_globally(
+                    ctx,
+                    &framework.options().commands,
+                )
+                .await?;
+
                 Ok(Data)
             })
         })
