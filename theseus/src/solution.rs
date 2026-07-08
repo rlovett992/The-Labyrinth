@@ -110,3 +110,14 @@ pub fn export_solution_svg_dfs(
         "output/solved_maze_dfs.svg",
     )
 }
+
+pub fn export_solution_svg_astar(
+    maze: &Maze,
+    path: &[Position],
+) -> io::Result<()> {
+    export_solution_svg(
+        maze,
+        path,
+        "output/solved_maze_astar.svg",
+    )
+}
