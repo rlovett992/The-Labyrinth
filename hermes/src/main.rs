@@ -6,9 +6,8 @@ use poise::serenity_prelude as serenity;
 use std::fs;
 use std::path::PathBuf;
 use tokio::process::Command;
-
 struct Data;
-
+ 
 type Error = Box<dyn std::error::Error + Send + Sync>;
 type Context<'a> = poise::Context<'a, Data, Error>;
 
@@ -43,28 +42,30 @@ async fn generate(
 
     let maze = generate_maze(width, height);
 
-    fs::create_dir_all("output/hermes")?;
+    fs::create_dir_all("output")?;
 
-    let json_path = "output/hermes/maze.json";
-    let svg_path = "output/hermes/maze.svg";
+    let json_path = "output/maze.json";
+    let svg_path = "output/maze.svg";
 
     export_json(&maze, json_path)?;
     export_svg(&maze, svg_path)?;
 
     let message = format!(
-        "Generated {} maze: {}x{}",
+        "Generated {} maze.\n\
+         Size: {}x{}\n\
+         Square: {}\n\
+         Files saved:\n\
+         - `{}`\n\
+         - `{}`",
         difficulty.label(),
         maze.width,
-        maze.height
+        maze.height,
+        square,
+        json_path,
+        svg_path
     );
 
-    ctx.send(
-        poise::CreateReply::default()
-            .content(message)
-            .attachment(serenity::CreateAttachment::path(svg_path).await?)
-            .attachment(serenity::CreateAttachment::path(json_path).await?),
-    )
-    .await?;
+    ctx.say(message).await?;
 
     Ok(())
 }
@@ -73,7 +74,6 @@ async fn generate(
 async fn theseus(ctx: Context<'_>) -> Result<(), Error> {
     ctx.defer().await?;
 
-    // Move from target/debug back to the workspace root.
     let workspace = PathBuf::from(env!("CARGO_MANIFEST_DIR"))
         .parent()
         .unwrap()
@@ -98,23 +98,11 @@ async fn theseus(ctx: Context<'_>) -> Result<(), Error> {
         return Ok(());
     }
 
-    let bfs_svg = workspace.join("output/solved_maze_bfs.svg");
-    let dfs_svg = workspace.join("output/solved_maze_dfs.svg");
-
-    let mut reply = poise::CreateReply::default().content(format!(
+    ctx.say(format!(
         "Theseus completed successfully.\n```text\n{}\n```",
         stdout
-    ));
-
-    if bfs_svg.exists() {
-        reply = reply.attachment(serenity::CreateAttachment::path(&bfs_svg).await?);
-    }
-
-    if dfs_svg.exists() {
-        reply = reply.attachment(serenity::CreateAttachment::path(&dfs_svg).await?);
-    }
-
-    ctx.send(reply).await?;
+    ))
+    .await?;
 
     Ok(())
 }
@@ -130,10 +118,7 @@ async fn main() {
 
     let framework = poise::Framework::builder()
         .options(poise::FrameworkOptions {
-            commands: vec![
-                generate(),
-                theseus(),
-            ],
+            commands: vec![generate(), theseus()],
             ..Default::default()
         })
         .setup(|ctx, _ready, framework| {
