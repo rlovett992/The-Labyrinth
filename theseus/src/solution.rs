@@ -4,7 +4,12 @@ use std::io;
 use crate::maze::maze::Maze;
 use crate::solver::bfs::Position;
 
-pub fn export_solution_svg_bfs(maze: &Maze, path: &[Position], output_path: &str) -> io::Result<()> {
+/// Shared renderer used by all algorithms.
+fn export_solution_svg(
+    maze: &Maze,
+    path: &[Position],
+    output_path: &str,
+) -> io::Result<()> {
     let cell_size = 20;
     let stroke_width = 2;
 
@@ -19,6 +24,7 @@ pub fn export_solution_svg_bfs(maze: &Maze, path: &[Position], output_path: &str
 
     svg.push_str(r#"<rect width="100%" height="100%" fill="white"/>"#);
 
+    // ---------- Solution Path ----------
     svg.push_str(r#"<polyline points=""#);
 
     for (x, y) in path {
@@ -28,9 +34,14 @@ pub fn export_solution_svg_bfs(maze: &Maze, path: &[Position], output_path: &str
     }
 
     svg.push_str(
-        r#"" fill="none" stroke="red" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>"#,
+        r#"" fill="none"
+        stroke="red"
+        stroke-width="4"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>"#,
     );
 
+    // ---------- Maze Walls ----------
     svg.push_str(&format!(
         r#"<g stroke="black" stroke-width="{stroke_width}" fill="none" stroke-linecap="square">"#
     ));
@@ -45,19 +56,27 @@ pub fn export_solution_svg_bfs(maze: &Maze, path: &[Position], output_path: &str
             let y2 = y1 + cell_size;
 
             if cell.north {
-                svg.push_str(&format!(r#"<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y1}"/>"#));
+                svg.push_str(&format!(
+                    r#"<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y1}"/>"#
+                ));
             }
 
             if cell.east {
-                svg.push_str(&format!(r#"<line x1="{x2}" y1="{y1}" x2="{x2}" y2="{y2}"/>"#));
+                svg.push_str(&format!(
+                    r#"<line x1="{x2}" y1="{y1}" x2="{x2}" y2="{y2}"/>"#
+                ));
             }
 
             if cell.south {
-                svg.push_str(&format!(r#"<line x1="{x1}" y1="{y2}" x2="{x2}" y2="{y2}"/>"#));
+                svg.push_str(&format!(
+                    r#"<line x1="{x1}" y1="{y2}" x2="{x2}" y2="{y2}"/>"#
+                ));
             }
 
             if cell.west {
-                svg.push_str(&format!(r#"<line x1="{x1}" y1="{y1}" x2="{x1}" y2="{y2}"/>"#));
+                svg.push_str(&format!(
+                    r#"<line x1="{x1}" y1="{y1}" x2="{x1}" y2="{y2}"/>"#
+                ));
             }
         }
     }
@@ -66,4 +85,28 @@ pub fn export_solution_svg_bfs(maze: &Maze, path: &[Position], output_path: &str
     svg.push_str("</svg>");
 
     fs::write(output_path, svg)
+}
+
+/// Export a BFS solution.
+pub fn export_solution_svg_bfs(
+    maze: &Maze,
+    path: &[Position],
+) -> io::Result<()> {
+    export_solution_svg(
+        maze,
+        path,
+        "output/solved_maze_bfs.svg",
+    )
+}
+
+/// Export a DFS solution.
+pub fn export_solution_svg_dfs(
+    maze: &Maze,
+    path: &[Position],
+) -> io::Result<()> {
+    export_solution_svg(
+        maze,
+        path,
+        "output/solved_maze_dfs.svg",
+    )
 }
