@@ -3,7 +3,7 @@ mod solution;
 mod solver;
 
 use maze::loader::load;
-use solution::export_solution_svg;
+use solution::export_solution_svg_bfs;
 use solver::bfs;
 
 fn main() {
@@ -18,7 +18,7 @@ fn main() {
         println!("Goal : {:?}", path.last().unwrap());
         println!("Path length: {} cells", path.len());
 
-        export_solution_svg(&maze, &path, "output/solved_maze.svg").expect("Failed to export solved maze SVG");
+        export_solution_svg_bfs(&maze, &path, "output/solved_maze_bfs.svg").expect("Failed to export solved maze SVG");
         println!("Solved maze exported to output/solved_maze.svg");
     }
     None => {

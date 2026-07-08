@@ -4,7 +4,7 @@ use std::io;
 use crate::maze::maze::Maze;
 use crate::solver::bfs::Position;
 
-pub fn export_solution_svg(maze: &Maze, path: &[Position], output_path: &str) -> io::Result<()> {
+pub fn export_solution_svg_bfs(maze: &Maze, path: &[Position], output_path: &str) -> io::Result<()> {
     let cell_size = 20;
     let stroke_width = 2;
 
