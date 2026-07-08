@@ -121,3 +121,14 @@ pub fn export_solution_svg_astar(
         "output/solved_maze_astar.svg",
     )
 }
+
+pub fn export_solution_svg_random(
+    maze: &Maze,
+    path: &[Position],
+) -> io::Result<()> {
+    export_solution_svg(
+        maze,
+        path,
+        "output/solved_maze_random.svg",
+    )
+}
