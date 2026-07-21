@@ -3,8 +3,14 @@ use std::collections::{BinaryHeap, HashMap};
 use std::time::Instant;
 
 use crate::maze::maze::Maze;
-use crate::solver::solver::{Position, SolverOutput, SolutionStats};
-
+use crate::solver::solver::{
+    Position,
+    SearchStep,
+    SolutionStats,
+    SolverOutput,
+    direction_between,
+    mark_solution_path,
+};
 
 #[derive(Clone, Copy, Debug, Eq, PartialEq)]
 struct Node {
@@ -36,6 +42,7 @@ pub fn solve(maze: &Maze) -> SolverOutput {
     let goal = (maze.width - 1, maze.height - 1);
 
     let mut nodes_explored = 0;
+    let mut trace = Vec::new();
 
     let mut open_set = BinaryHeap::new();
     let mut came_from: HashMap<Position, Position> = HashMap::new();
@@ -60,11 +67,22 @@ pub fn solve(maze: &Maze) -> SolverOutput {
 
         nodes_explored += 1;
 
+        record_search_step(
+            current,
+            start,
+            nodes_explored,
+            &came_from,
+            &mut trace,
+        );
+
         if current == goal {
-            let path = reconstruct_path(came_from, start, goal);
+            let path = reconstruct_path(&came_from, start, goal);
+
+            mark_solution_path(&mut trace, &path);
 
             return SolverOutput {
                 path: Some(path.clone()),
+                trace,
                 stats: SolutionStats {
                     algorithm: "A*",
                     solved: true,
@@ -78,14 +96,17 @@ pub fn solve(maze: &Maze) -> SolverOutput {
         for neighbor in maze.neighbors(current) {
             let tentative_g_score = current_best_g + 1;
 
-            if tentative_g_score < *g_scores.get(&neighbor).unwrap_or(&usize::MAX) {
+            if tentative_g_score
+                < *g_scores.get(&neighbor).unwrap_or(&usize::MAX)
+            {
                 came_from.insert(neighbor, current);
                 g_scores.insert(neighbor, tentative_g_score);
 
                 open_set.push(Node {
                     position: neighbor,
                     g_score: tentative_g_score,
-                    f_score: tentative_g_score + heuristic(neighbor, goal),
+                    f_score: tentative_g_score
+                        + heuristic(neighbor, goal),
                 });
             }
         }
@@ -93,6 +114,7 @@ pub fn solve(maze: &Maze) -> SolverOutput {
 
     SolverOutput {
         path: None,
+        trace,
         stats: SolutionStats {
             algorithm: "A*",
             solved: false,
@@ -103,12 +125,40 @@ pub fn solve(maze: &Maze) -> SolverOutput {
     }
 }
 
+fn record_search_step(
+    current: Position,
+    start: Position,
+    visit_order: usize,
+    came_from: &HashMap<Position, Position>,
+    trace: &mut Vec<SearchStep>,
+) {
+    if current == start {
+        return;
+    }
+
+    let Some(&parent) = came_from.get(&current) else {
+        return;
+    };
+
+    let Some(direction) = direction_between(parent, current) else {
+        return;
+    };
+
+    trace.push(SearchStep {
+        from: parent,
+        to: current,
+        direction,
+        visit_order,
+        on_solution_path: false,
+    });
+}
+
 fn heuristic(position: Position, goal: Position) -> usize {
     position.0.abs_diff(goal.0) + position.1.abs_diff(goal.1)
 }
 
 fn reconstruct_path(
-    came_from: HashMap<Position, Position>,
+    came_from: &HashMap<Position, Position>,
     start: Position,
     goal: Position,
 ) -> Vec<Position> {

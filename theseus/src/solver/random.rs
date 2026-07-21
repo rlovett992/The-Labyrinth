@@ -2,8 +2,14 @@ use std::collections::HashMap;
 use std::time::{Instant, SystemTime, UNIX_EPOCH};
 
 use crate::maze::maze::Maze;
-use crate::solver::solver::{Position, SolverOutput, SolutionStats};
-
+use crate::solver::solver::{
+    Position,
+    SearchStep,
+    SolutionStats,
+    SolverOutput,
+    direction_between,
+    mark_solution_path,
+};
 
 pub fn solve(maze: &Maze) -> SolverOutput {
     let start_time = Instant::now();
@@ -12,6 +18,7 @@ pub fn solve(maze: &Maze) -> SolverOutput {
     let goal = (maze.width - 1, maze.height - 1);
 
     let mut nodes_explored = 0;
+    let mut trace = Vec::new();
 
     let mut rng = SimpleRng::new();
     let mut stack = Vec::new();
@@ -23,11 +30,22 @@ pub fn solve(maze: &Maze) -> SolverOutput {
     while let Some(current) = stack.pop() {
         nodes_explored += 1;
 
+        record_search_step(
+            current,
+            start,
+            nodes_explored,
+            &came_from,
+            &mut trace,
+        );
+
         if current == goal {
-            let path = reconstruct_path(came_from, start, goal);
+            let path = reconstruct_path(&came_from, start, goal);
+
+            mark_solution_path(&mut trace, &path);
 
             return SolverOutput {
                 path: Some(path.clone()),
+                trace,
                 stats: SolutionStats {
                     algorithm: "Random",
                     solved: true,
@@ -51,6 +69,7 @@ pub fn solve(maze: &Maze) -> SolverOutput {
 
     SolverOutput {
         path: None,
+        trace,
         stats: SolutionStats {
             algorithm: "Random",
             solved: false,
@@ -61,8 +80,36 @@ pub fn solve(maze: &Maze) -> SolverOutput {
     }
 }
 
+fn record_search_step(
+    current: Position,
+    start: Position,
+    visit_order: usize,
+    came_from: &HashMap<Position, Position>,
+    trace: &mut Vec<SearchStep>,
+) {
+    if current == start {
+        return;
+    }
+
+    let Some(&parent) = came_from.get(&current) else {
+        return;
+    };
+
+    let Some(direction) = direction_between(parent, current) else {
+        return;
+    };
+
+    trace.push(SearchStep {
+        from: parent,
+        to: current,
+        direction,
+        visit_order,
+        on_solution_path: false,
+    });
+}
+
 fn reconstruct_path(
-    came_from: HashMap<Position, Position>,
+    came_from: &HashMap<Position, Position>,
     start: Position,
     goal: Position,
 ) -> Vec<Position> {
@@ -93,7 +140,7 @@ impl SimpleRng {
     fn new() -> Self {
         let seed = SystemTime::now()
             .duration_since(UNIX_EPOCH)
-            .unwrap()
+            .unwrap_or_default()
             .as_nanos() as u64;
 
         Self { state: seed }
