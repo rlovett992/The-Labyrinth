@@ -28,9 +28,13 @@ pub fn benchmark(maze: &Maze) {
     if bfs_output.stats.solved {
         print_results(&bfs_output);
 
-        if let Some(path) = bfs_output.path {
-            export_solution_svg_bfs(maze, &path)
-                .expect("Failed to export BFS solution");
+        if let Some(path) = bfs_output.path.as_deref() {
+            export_solution_svg_bfs(
+                maze,
+                &bfs_output.trace,
+                path,
+            )
+            .expect("Failed to export BFS solution");
         }
     }
 
@@ -43,9 +47,13 @@ pub fn benchmark(maze: &Maze) {
     if dfs_output.stats.solved {
         print_results(&dfs_output);
 
-        if let Some(path) = dfs_output.path {
-            export_solution_svg_dfs(maze, &path)
-                .expect("Failed to export DFS solution");
+        if let Some(path) = dfs_output.path.as_deref() {
+            export_solution_svg_dfs(
+                maze,
+                &dfs_output.trace,
+                path,
+            )
+            .expect("Failed to export DFS solution");
         }
     }
 
@@ -58,9 +66,13 @@ pub fn benchmark(maze: &Maze) {
     if random_output.stats.solved {
         print_results(&random_output);
 
-        if let Some(path) = random_output.path {
-            export_solution_svg_random(maze, &path)
-                .expect("Failed to export Random solution");
+        if let Some(path) = random_output.path.as_deref() {
+            export_solution_svg_random(
+                maze,
+                &random_output.trace,
+                path,
+            )
+            .expect("Failed to export Random solution");
         }
     }
 
@@ -73,9 +85,13 @@ pub fn benchmark(maze: &Maze) {
     if astar_output.stats.solved {
         print_results(&astar_output);
 
-        if let Some(path) = astar_output.path {
-            export_solution_svg_astar(maze, &path)
-                .expect("Failed to export A* solution");
+        if let Some(path) = astar_output.path.as_deref() {
+            export_solution_svg_astar(
+                maze,
+                &astar_output.trace,
+                path,
+            )
+            .expect("Failed to export A* solution");
         }
     }
 
