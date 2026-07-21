@@ -1,6 +1,11 @@
+use std::fs;
 use std::io::{self, Write};
 
+use daedalus::generator::generate_maze;
+use rand::Rng;
+
 use crate::maze::loader::load;
+use crate::maze::maze::Maze;
 
 use super::checkpoint::{
     TrainingCheckpoint,
@@ -13,6 +18,11 @@ use super::checkpoint::{
 use super::teacher::select_teacher;
 
 const MAZE_PATH: &str = "output/maze.json";
+
+const MIN_TRAINING_WIDTH: usize = 20;
+const MAX_TRAINING_WIDTH: usize = 100;
+const MIN_TRAINING_HEIGHT: usize = 20;
+const MAX_TRAINING_HEIGHT: usize = 100;
 
 pub fn start_new_training() {
     println!();
@@ -117,13 +127,12 @@ pub fn view_training_statistics() {
 
 fn train_one_maze(previously_completed: u128) {
     println!();
-    println!("Loading training maze from {MAZE_PATH}...");
+    println!("Generating a new training maze...");
 
-    let maze = match load(MAZE_PATH) {
+    let maze = match generate_training_maze() {
         Ok(maze) => maze,
         Err(error) => {
-            eprintln!("Failed to load training maze: {error}");
-            eprintln!("Generate a maze with Daedalus first.");
+            eprintln!("Failed to generate training maze: {error}");
             return;
         }
     };
@@ -146,14 +155,14 @@ fn train_one_maze(previously_completed: u128) {
     println!("Path cells:        {}", teacher.path.len());
 
     /*
-        The actual learning model will be updated here.
+        The actual Theseus model will be trained here.
 
-        The teacher path is now available as:
+        The selected teacher path is available through:
 
             teacher.path
 
-        Each consecutive pair of positions can eventually become a
-        training example showing Theseus which direction to take.
+        Each consecutive pair of positions will become one
+        directional training example.
     */
 
     let checkpoint = TrainingCheckpoint {
@@ -176,6 +185,28 @@ fn train_one_maze(previously_completed: u128) {
             eprintln!("Failed to save checkpoint: {error}");
         }
     }
+}
+
+fn generate_training_maze() -> io::Result<Maze> {
+    let mut rng = rand::rng();
+
+    let width = rng.random_range(
+        MIN_TRAINING_WIDTH..=MAX_TRAINING_WIDTH,
+    );
+
+    let height = rng.random_range(
+        MIN_TRAINING_HEIGHT..=MAX_TRAINING_HEIGHT,
+    );
+
+    let generated_maze = generate_maze(width, height);
+
+    let json = serde_json::to_string_pretty(&generated_maze)
+        .map_err(io::Error::other)?;
+
+    fs::create_dir_all("output")?;
+    fs::write(MAZE_PATH, json)?;
+
+    load(MAZE_PATH)
 }
 
 fn checkpoints_exist() -> bool {
