@@ -1,0 +1,10 @@
+{
+  "mazes_completed": 125,
+  "latest_teacher": "Random",
+  "teacher_nodes_explored": 9713,
+  "teacher_duration_nanos": 12599000,
+  "teacher_path_length": 4101,
+  "maze_width": 106,
+  "maze_height": 130,
+  "saved_at_unix_seconds": 1785181978
+}
