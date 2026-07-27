@@ -1,8 +1,11 @@
-use serde::{Deserialize, Serialize};
 use std::fs;
 use std::io;
 use std::path::{Path, PathBuf};
 use std::time::{SystemTime, UNIX_EPOCH};
+
+use serde::{Deserialize, Serialize};
+
+use super::model::TheseusModel;
 
 const CHECKPOINT_DIRECTORY: &str = "output/theseus/checkpoints";
 const CHECKPOINT_SLOTS: usize = 5;
@@ -10,12 +13,20 @@ const CHECKPOINT_SLOTS: usize = 5;
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct TrainingCheckpoint {
     pub mazes_completed: u128,
+
+    pub model: TheseusModel,
+    pub total_examples_trained: u128,
+    pub latest_training_loss: f32,
+    pub latest_training_accuracy: f32,
+
     pub latest_teacher: String,
     pub teacher_nodes_explored: usize,
     pub teacher_duration_nanos: u128,
     pub teacher_path_length: usize,
+
     pub maze_width: usize,
     pub maze_height: usize,
+
     pub saved_at_unix_seconds: u64,
 }
 
@@ -41,15 +52,21 @@ pub fn save_checkpoint(
     Ok(destination)
 }
 
-pub fn load_newest_checkpoint() -> io::Result<Option<TrainingCheckpoint>> {
+pub fn load_newest_checkpoint(
+) -> io::Result<Option<TrainingCheckpoint>> {
     let checkpoints = load_all_checkpoints()?;
 
-    Ok(checkpoints
-        .into_iter()
-        .max_by_key(|checkpoint| checkpoint.mazes_completed))
+    Ok(
+        checkpoints
+            .into_iter()
+            .max_by_key(|checkpoint| {
+                checkpoint.mazes_completed
+            }),
+    )
 }
 
-pub fn load_all_checkpoints() -> io::Result<Vec<TrainingCheckpoint>> {
+pub fn load_all_checkpoints(
+) -> io::Result<Vec<TrainingCheckpoint>> {
     let mut checkpoints = Vec::new();
 
     for slot in 1..=CHECKPOINT_SLOTS {
@@ -60,7 +77,9 @@ pub fn load_all_checkpoints() -> io::Result<Vec<TrainingCheckpoint>> {
         }
 
         match read_checkpoint(&path) {
-            Ok(checkpoint) => checkpoints.push(checkpoint),
+            Ok(checkpoint) => {
+                checkpoints.push(checkpoint);
+            }
             Err(error) => {
                 eprintln!(
                     "Warning: could not read checkpoint {}: {error}",
@@ -113,8 +132,12 @@ fn choose_checkpoint_slot() -> io::Result<PathBuf> {
 
         match read_checkpoint(&path) {
             Ok(checkpoint) => {
-                if checkpoint.mazes_completed < oldest_completed {
-                    oldest_completed = checkpoint.mazes_completed;
+                if checkpoint.mazes_completed
+                    < oldest_completed
+                {
+                    oldest_completed =
+                        checkpoint.mazes_completed;
+
                     oldest_slot = slot;
                 }
             }
@@ -127,10 +150,13 @@ fn choose_checkpoint_slot() -> io::Result<PathBuf> {
     Ok(checkpoint_path(oldest_slot))
 }
 
-fn read_checkpoint(path: &Path) -> io::Result<TrainingCheckpoint> {
+fn read_checkpoint(
+    path: &Path,
+) -> io::Result<TrainingCheckpoint> {
     let json = fs::read_to_string(path)?;
 
-    serde_json::from_str(&json).map_err(io::Error::other)
+    serde_json::from_str(&json)
+        .map_err(io::Error::other)
 }
 
 fn checkpoint_path(slot: usize) -> PathBuf {

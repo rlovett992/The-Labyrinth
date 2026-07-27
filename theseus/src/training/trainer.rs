@@ -18,6 +18,10 @@ use super::checkpoint::{
     save_checkpoint,
 };
 use super::example::create_training_examples;
+use super::model::{
+    TheseusModel,
+    TrainingResult,
+};
 use super::teacher::select_teacher;
 
 const MAZE_PATH: &str = "output/maze.json";
@@ -32,7 +36,7 @@ enum TrainingLimit {
 
 struct ProcessedMaze {
     checkpoint: TrainingCheckpoint,
-    training_example_count: usize,
+    training_result: TrainingResult,
     difficulty: Difficulty,
 }
 
@@ -60,12 +64,23 @@ pub fn start_new_training() {
 
     if existing_checkpoints {
         if let Err(error) = clear_checkpoints() {
-            eprintln!("Failed to clear existing checkpoints: {error}");
+            eprintln!(
+                "Failed to clear existing checkpoints: {error}"
+            );
             return;
         }
     }
 
-    run_training_session(0, limit);
+    let model = TheseusModel::new();
+
+    println!();
+    println!("Created a new Theseus model.");
+    println!(
+        "Learning rate: {}",
+        model.learning_rate()
+    );
+
+    run_training_session(0, limit, model);
 }
 
 pub fn resume_training() {
@@ -75,12 +90,14 @@ pub fn resume_training() {
     let checkpoint = match load_newest_checkpoint() {
         Ok(Some(checkpoint)) => checkpoint,
         Ok(None) => {
-            println!("No checkpoint was found.");
+            println!("No compatible checkpoint was found.");
             println!("Use Start New Training first.");
             return;
         }
         Err(error) => {
-            eprintln!("Failed to load checkpoints: {error}");
+            eprintln!(
+                "Failed to load checkpoints: {error}"
+            );
             return;
         }
     };
@@ -89,51 +106,105 @@ pub fn resume_training() {
         "Loaded checkpoint after {} completed maze(s).",
         checkpoint.mazes_completed
     );
+    println!(
+        "Examples already trained: {}",
+        checkpoint.total_examples_trained
+    );
+    println!(
+        "Latest training loss:     {:.6}",
+        checkpoint.latest_training_loss
+    );
+    println!(
+        "Latest accuracy:          {:.2}%",
+        checkpoint.latest_training_accuracy * 100.0
+    );
 
     let Some(limit) = prompt_for_training_limit() else {
         println!("Resume training cancelled.");
         return;
     };
 
-    run_training_session(checkpoint.mazes_completed, limit);
+    let previously_completed =
+        checkpoint.mazes_completed;
+
+    let model = checkpoint.model;
+
+    run_training_session(
+        previously_completed,
+        limit,
+        model,
+    );
 }
 
 pub fn view_training_statistics() {
     println!();
     println!("=== Training Statistics ===");
 
-    let mut checkpoints = match load_all_checkpoints() {
-        Ok(checkpoints) => checkpoints,
-        Err(error) => {
-            eprintln!("Failed to read training checkpoints: {error}");
-            return;
-        }
-    };
+    let mut checkpoints =
+        match load_all_checkpoints() {
+            Ok(checkpoints) => checkpoints,
+            Err(error) => {
+                eprintln!(
+                    "Failed to read training checkpoints: \
+                     {error}"
+                );
+                return;
+            }
+        };
 
     if checkpoints.is_empty() {
-        println!("No training checkpoints are available.");
+        println!(
+            "No compatible training checkpoints are available."
+        );
         return;
     }
 
-    checkpoints.sort_by_key(|checkpoint| checkpoint.mazes_completed);
+    checkpoints.sort_by_key(
+        |checkpoint| checkpoint.mazes_completed,
+    );
 
     let newest = checkpoints
         .last()
         .expect("Checkpoint list should not be empty");
 
-    println!("Stored checkpoints: {}", checkpoints.len());
-    println!("Mazes completed:    {}", newest.mazes_completed);
-    println!("Latest teacher:     {}", newest.latest_teacher);
     println!(
-        "Teacher explored:   {} nodes",
+        "Stored checkpoints:     {}",
+        checkpoints.len()
+    );
+    println!(
+        "Mazes completed:        {}",
+        newest.mazes_completed
+    );
+    println!(
+        "Examples trained:       {}",
+        newest.total_examples_trained
+    );
+    println!(
+        "Latest training loss:   {:.6}",
+        newest.latest_training_loss
+    );
+    println!(
+        "Latest accuracy:        {:.2}%",
+        newest.latest_training_accuracy * 100.0
+    );
+    println!(
+        "Model learning rate:    {}",
+        newest.model.learning_rate()
+    );
+    println!(
+        "Latest teacher:         {}",
+        newest.latest_teacher
+    );
+    println!(
+        "Teacher explored:       {} nodes",
         newest.teacher_nodes_explored
     );
     println!(
-        "Teacher time:       {} ns",
+        "Teacher time:           {} ns",
         newest.teacher_duration_nanos
     );
     println!(
-        "Latest maze:        {}x{}",
+        "Latest maze:            {}x{}",
         newest.maze_width,
         newest.maze_height
     );
@@ -143,10 +214,13 @@ pub fn view_training_statistics() {
 
     for checkpoint in checkpoints {
         println!(
-            "  Maze {:>5}: {:<8} | explored {:>8} | {}x{}",
+            "  Maze {:>5}: {:<8} | explored {:>8} | \
+             loss {:>9.6} | accuracy {:>6.2}% | {}x{}",
             checkpoint.mazes_completed,
             checkpoint.latest_teacher,
             checkpoint.teacher_nodes_explored,
+            checkpoint.latest_training_loss,
+            checkpoint.latest_training_accuracy * 100.0,
             checkpoint.maze_width,
             checkpoint.maze_height
         );
@@ -162,7 +236,8 @@ fn prompt_for_training_limit() -> Option<TrainingLimit> {
         println!("0. Cancel");
         println!();
 
-        let selection = read_input("Selection: ")?;
+        let selection =
+            read_input("Selection: ")?;
 
         match selection.trim() {
             "1" => {
@@ -200,11 +275,17 @@ fn prompt_for_maze_count() -> Option<TrainingLimit> {
 
         match trimmed.parse::<u64>() {
             Ok(count) if count > 0 => {
-                return Some(TrainingLimit::Mazes(count));
+                return Some(
+                    TrainingLimit::Mazes(count),
+                );
             }
             _ => {
-                println!("Enter a whole number greater than zero.");
-                println!("Enter 0 or \"cancel\" to cancel.");
+                println!(
+                    "Enter a whole number greater than zero."
+                );
+                println!(
+                    "Enter 0 or \"cancel\" to cancel."
+                );
             }
         }
     }
@@ -229,14 +310,20 @@ fn prompt_for_training_hours() -> Option<TrainingLimit> {
         let hours = match trimmed.parse::<f64>() {
             Ok(hours) => hours,
             Err(_) => {
-                println!("Enter a number greater than zero.");
-                println!("Decimals such as 0.5 are allowed.");
+                println!(
+                    "Enter a number greater than zero."
+                );
+                println!(
+                    "Decimals such as 0.5 are allowed."
+                );
                 continue;
             }
         };
 
         if !hours.is_finite() || hours <= 0.0 {
-            println!("Enter a finite number greater than zero.");
+            println!(
+                "Enter a finite number greater than zero."
+            );
             continue;
         }
 
@@ -245,31 +332,41 @@ fn prompt_for_training_hours() -> Option<TrainingLimit> {
         if !seconds.is_finite()
             || seconds > u64::MAX as f64
         {
-            println!("The requested duration is too large.");
+            println!(
+                "The requested duration is too large."
+            );
             continue;
         }
 
-        let duration = Duration::from_secs_f64(seconds);
+        let duration =
+            Duration::from_secs_f64(seconds);
 
         if duration.is_zero() {
-            println!("The requested duration is too short.");
+            println!(
+                "The requested duration is too short."
+            );
             continue;
         }
 
-        return Some(TrainingLimit::Duration(duration));
+        return Some(
+            TrainingLimit::Duration(duration),
+        );
     }
 }
 
 fn run_training_session(
     previously_completed: u128,
     limit: TrainingLimit,
+    mut model: TheseusModel,
 ) {
     println!();
     println!("=== Training Session Started ===");
 
     match limit {
         TrainingLimit::Mazes(target) => {
-            println!("Session target: {target} maze(s)");
+            println!(
+                "Session target: {target} maze(s)"
+            );
         }
         TrainingLimit::Duration(duration) => {
             println!(
@@ -282,12 +379,17 @@ fn run_training_session(
     println!(
         "Previous mazes completed: {previously_completed}"
     );
+    println!(
+        "Previous examples trained: {}",
+        model.examples_trained()
+    );
     println!();
 
     let session_started = Instant::now();
 
     let mut session_mazes_completed = 0_u64;
-    let mut total_mazes_completed = previously_completed;
+    let mut total_mazes_completed =
+        previously_completed;
     let mut consecutive_failures = 0_usize;
 
     while !training_limit_reached(
@@ -295,15 +397,20 @@ fn run_training_session(
         session_mazes_completed,
         session_started,
     ) {
-        let next_maze_number = total_mazes_completed + 1;
+        let next_maze_number =
+            total_mazes_completed + 1;
 
-        match process_one_maze(next_maze_number) {
+        match process_one_maze(
+            next_maze_number,
+            &mut model,
+        ) {
             Ok(processed_maze) => {
                 match save_checkpoint(
                     &processed_maze.checkpoint,
                 ) {
                     Ok(_) => {
                         session_mazes_completed += 1;
+
                         total_mazes_completed =
                             processed_maze
                                 .checkpoint
@@ -331,7 +438,9 @@ fn run_training_session(
             Err(error) => {
                 consecutive_failures += 1;
 
-                eprintln!("Training maze failed: {error}");
+                eprintln!(
+                    "Training maze failed: {error}"
+                );
             }
         }
 
@@ -341,7 +450,8 @@ fn run_training_session(
             eprintln!();
             eprintln!(
                 "Training stopped after \
-                 {MAX_CONSECUTIVE_FAILURES} consecutive failures."
+                 {MAX_CONSECUTIVE_FAILURES} \
+                 consecutive failures."
             );
 
             break;
@@ -359,6 +469,10 @@ fn run_training_session(
     println!(
         "Total mazes completed:   {}",
         total_mazes_completed
+    );
+    println!(
+        "Total examples trained:  {}",
+        model.examples_trained()
     );
     println!(
         "Session elapsed time:    {}",
@@ -390,63 +504,76 @@ fn run_training_session(
 
 fn process_one_maze(
     maze_number: u128,
+    model: &mut TheseusModel,
 ) -> Result<ProcessedMaze, String> {
     let (maze, difficulty) =
-        generate_training_maze().map_err(|error| {
-            format!(
-                "failed to generate maze {maze_number}: {error}"
-            )
-        })?;
-
-    let teacher = select_teacher(&maze).ok_or_else(|| {
-        format!(
-            "no solver successfully solved maze {maze_number}"
-        )
-    })?;
-
-    let training_examples =
-        create_training_examples(&maze, &teacher.path)
+        generate_training_maze()
             .map_err(|error| {
                 format!(
-                    "failed to create training examples for \
-                     maze {maze_number}: {error}"
+                    "failed to generate maze \
+                     {maze_number}: {error}"
                 )
             })?;
 
-    /*
-        The neural-network model will be trained here.
+    let teacher =
+        select_teacher(&maze).ok_or_else(|| {
+            format!(
+                "no solver successfully solved maze \
+                 {maze_number}"
+            )
+        })?;
 
-        Model inputs are available through:
+    let training_examples =
+        create_training_examples(
+            &maze,
+            &teacher.path,
+        )
+        .map_err(|error| {
+            format!(
+                "failed to create training examples for \
+                 maze {maze_number}: {error}"
+            )
+        })?;
 
-            example.input_values()
+    let training_result =
+        model.train(&training_examples);
 
-        Expected direction classes are available through:
-
-            example.target_index()
-
-        This loop currently validates that each example can be
-        converted into model-ready values. The model-training call
-        will replace or follow this loop.
-    */
-    for example in &training_examples {
-        let _input_values = example.input_values();
-        let _target_index = example.target_index();
+    if !training_result.average_loss.is_finite() {
+        return Err(format!(
+            "model produced a non-finite loss on maze \
+             {maze_number}"
+        ));
     }
 
     let checkpoint = TrainingCheckpoint {
         mazes_completed: maze_number,
+
+        model: model.clone(),
+        total_examples_trained:
+            model.examples_trained(),
+        latest_training_loss:
+            training_result.average_loss,
+        latest_training_accuracy:
+            training_result.accuracy,
+
         latest_teacher: teacher.algorithm,
-        teacher_nodes_explored: teacher.nodes_explored,
-        teacher_duration_nanos: teacher.duration_nanos,
-        teacher_path_length: teacher.path.len(),
+        teacher_nodes_explored:
+            teacher.nodes_explored,
+        teacher_duration_nanos:
+            teacher.duration_nanos,
+        teacher_path_length:
+            teacher.path.len(),
+
         maze_width: maze.width,
         maze_height: maze.height,
-        saved_at_unix_seconds: current_unix_seconds(),
+
+        saved_at_unix_seconds:
+            current_unix_seconds(),
     };
 
     Ok(ProcessedMaze {
         checkpoint,
-        training_example_count: training_examples.len(),
+        training_result,
         difficulty,
     })
 }
@@ -472,15 +599,25 @@ fn print_training_progress(
     session_started: Instant,
     processed_maze: &ProcessedMaze,
 ) {
-    let checkpoint = &processed_maze.checkpoint;
-    let difficulty = processed_maze.difficulty.label();
-    let elapsed = session_started.elapsed();
+    let checkpoint =
+        &processed_maze.checkpoint;
+
+    let result =
+        processed_maze.training_result;
+
+    let difficulty =
+        processed_maze.difficulty.label();
+
+    let elapsed =
+        session_started.elapsed();
 
     match limit {
         TrainingLimit::Mazes(target) => {
             println!(
                 "Maze {}/{} | Total {} | {:<13} | \
-                 Teacher: {} | Nodes: {} | Examples: {} | \
+                 Teacher: {} | Nodes: {} | \
+                 Examples: {} | Correct: {}/{} | \
+                 Loss: {:.6} | Accuracy: {:.2}% | \
                  Elapsed: {}",
                 session_mazes_completed,
                 target,
@@ -488,23 +625,35 @@ fn print_training_progress(
                 difficulty,
                 checkpoint.latest_teacher,
                 checkpoint.teacher_nodes_explored,
-                processed_maze.training_example_count,
+                result.example_count,
+                result.correct_predictions,
+                result.example_count,
+                result.average_loss,
+                result.accuracy * 100.0,
                 format_duration(elapsed)
             );
         }
+
         TrainingLimit::Duration(duration) => {
-            let remaining = duration.saturating_sub(elapsed);
+            let remaining =
+                duration.saturating_sub(elapsed);
 
             println!(
                 "Maze {} | Total {} | {:<13} | \
-                 Teacher: {} | Nodes: {} | Examples: {} | \
+                 Teacher: {} | Nodes: {} | \
+                 Examples: {} | Correct: {}/{} | \
+                 Loss: {:.6} | Accuracy: {:.2}% | \
                  Elapsed: {} | Remaining: {}",
                 session_mazes_completed,
                 checkpoint.mazes_completed,
                 difficulty,
                 checkpoint.latest_teacher,
                 checkpoint.teacher_nodes_explored,
-                processed_maze.training_example_count,
+                result.example_count,
+                result.correct_predictions,
+                result.example_count,
+                result.average_loss,
+                result.accuracy * 100.0,
                 format_duration(elapsed),
                 format_duration(remaining)
             );
@@ -514,17 +663,23 @@ fn print_training_progress(
 
 fn generate_training_maze(
 ) -> io::Result<(Maze, Difficulty)> {
-    let difficulty = random_training_difficulty();
+    let difficulty =
+        random_training_difficulty();
 
-    let width = difficulty.random_size();
-    let height = difficulty.random_size();
+    let width =
+        difficulty.random_size();
 
-    let generated_maze = generate_maze(width, height);
+    let height =
+        difficulty.random_size();
 
-    let json = serde_json::to_string_pretty(
-        &generated_maze,
-    )
-    .map_err(io::Error::other)?;
+    let generated_maze =
+        generate_maze(width, height);
+
+    let json =
+        serde_json::to_string_pretty(
+            &generated_maze,
+        )
+        .map_err(io::Error::other)?;
 
     fs::create_dir_all("output")?;
     fs::write(MAZE_PATH, json)?;
@@ -537,7 +692,8 @@ fn generate_training_maze(
 fn random_training_difficulty() -> Difficulty {
     let mut rng = rand::rng();
 
-    let roll = rng.random_range(0..100);
+    let roll =
+        rng.random_range(0..100);
 
     match roll {
         0..10 => Difficulty::Easy,
@@ -549,7 +705,9 @@ fn random_training_difficulty() -> Difficulty {
 
 fn checkpoints_exist() -> bool {
     load_all_checkpoints()
-        .map(|checkpoints| !checkpoints.is_empty())
+        .map(|checkpoints| {
+            !checkpoints.is_empty()
+        })
         .unwrap_or(false)
 }
 
@@ -564,30 +722,50 @@ fn confirm(prompt: &str) -> bool {
     )
 }
 
-fn read_input(prompt: &str) -> Option<String> {
+fn read_input(
+    prompt: &str,
+) -> Option<String> {
     print!("{prompt}");
 
-    if let Err(error) = io::stdout().flush() {
-        eprintln!("Failed to display prompt: {error}");
+    if let Err(error) =
+        io::stdout().flush()
+    {
+        eprintln!(
+            "Failed to display prompt: {error}"
+        );
         return None;
     }
 
     let mut input = String::new();
 
-    if let Err(error) = io::stdin().read_line(&mut input) {
-        eprintln!("Failed to read input: {error}");
+    if let Err(error) =
+        io::stdin().read_line(&mut input)
+    {
+        eprintln!(
+            "Failed to read input: {error}"
+        );
         return None;
     }
 
     Some(input)
 }
 
-fn format_duration(duration: Duration) -> String {
-    let total_seconds = duration.as_secs();
+fn format_duration(
+    duration: Duration,
+) -> String {
+    let total_seconds =
+        duration.as_secs();
 
-    let hours = total_seconds / 3_600;
-    let minutes = (total_seconds % 3_600) / 60;
-    let seconds = total_seconds % 60;
+    let hours =
+        total_seconds / 3_600;
 
-    format!("{hours:02}:{minutes:02}:{seconds:02}")
+    let minutes =
+        (total_seconds % 3_600) / 60;
+
+    let seconds =
+        total_seconds % 60;
+
+    format!(
+        "{hours:02}:{minutes:02}:{seconds:02}"
+    )
 }
