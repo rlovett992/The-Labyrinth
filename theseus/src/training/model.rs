@@ -25,7 +25,6 @@ pub struct TheseusModel {
 pub struct TrainingResult {
     pub average_loss: f32,
     pub accuracy: f32,
-    pub correct_predictions: usize,
     pub example_count: usize,
 }
 
@@ -67,7 +66,6 @@ impl TheseusModel {
             return TrainingResult {
                 average_loss: 0.0,
                 accuracy: 0.0,
-                correct_predictions: 0,
                 example_count: 0,
             };
         }
@@ -95,21 +93,8 @@ impl TheseusModel {
         TrainingResult {
             average_loss: total_loss / example_count as f32,
             accuracy: correct_predictions as f32 / example_count as f32,
-            correct_predictions,
             example_count,
         }
-    }
-
-    /// Returns the most likely direction class:
-    ///
-    /// 0 = North
-    /// 1 = East
-    /// 2 = South
-    /// 3 = West
-    pub fn predict(&self, input: &[f32; INPUT_SIZE]) -> usize {
-        let probabilities = self.predict_probabilities(input);
-
-        index_of_largest(&probabilities)
     }
 
     /// Returns one probability for each direction.

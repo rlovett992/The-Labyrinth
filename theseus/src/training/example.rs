@@ -11,9 +11,6 @@ use crate::solver::solver::{Direction, Position, direction_between};
 /// structure and learn to predict `target_direction`.
 #[derive(Debug, Clone)]
 pub struct TrainingExample {
-    /// Position where the decision is being made.
-    pub position: Position,
-
     /// Whether each side of the current cell contains a wall.
     ///
     /// Order:
@@ -184,7 +181,6 @@ pub fn create_training_examples(
         let cell = &maze.cells[current.1][current.0];
 
         let example = TrainingExample {
-            position: current,
             walls: [cell.north, cell.east, cell.south, cell.west],
             current_x_ratio: normalize_coordinate(current.0, maze.width),
             current_y_ratio: normalize_coordinate(current.1, maze.height),

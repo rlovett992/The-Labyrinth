@@ -24,7 +24,7 @@ pub fn solve(maze: &Maze) -> SolverOutput {
     while let Some(current) = queue.pop_front() {
         nodes_explored += 1;
 
-        record_search_step(current, start, nodes_explored, &came_from, &mut trace);
+        record_search_step(current, start, &came_from, &mut trace);
 
         if current == goal {
             let path = reconstruct_path(&came_from, start, goal);
@@ -68,7 +68,6 @@ pub fn solve(maze: &Maze) -> SolverOutput {
 fn record_search_step(
     current: Position,
     start: Position,
-    visit_order: usize,
     came_from: &HashMap<Position, Position>,
     trace: &mut Vec<SearchStep>,
 ) {
@@ -80,15 +79,9 @@ fn record_search_step(
         return;
     };
 
-    let Some(direction) = direction_between(parent, current) else {
-        return;
-    };
-
     trace.push(SearchStep {
         from: parent,
         to: current,
-        direction,
-        visit_order,
         on_solution_path: false,
     });
 }

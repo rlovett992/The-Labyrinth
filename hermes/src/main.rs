@@ -77,13 +77,9 @@ struct CheckpointSummary {
 
     theseus_solved: bool,
     theseus_nodes_explored: u128,
-    theseus_duration_nanos: u128,
-    theseus_path_length: u128,
 
     latest_teacher: String,
     teacher_nodes_explored: u128,
-    teacher_duration_nanos: u128,
-    teacher_path_length: u128,
 
     maze_width: u64,
     maze_height: u64,
@@ -864,18 +860,6 @@ fn checkpoint_from_value(
                 "theseus_nodes_explored",
             )?,
 
-        theseus_duration_nanos:
-            get_u128(
-                value,
-                "theseus_duration_nanos",
-            )?,
-
-        theseus_path_length:
-            get_u128(
-                value,
-                "theseus_path_length",
-            )?,
-
         latest_teacher:
             value
                 .get(
@@ -888,18 +872,6 @@ fn checkpoint_from_value(
             get_u128(
                 value,
                 "teacher_nodes_explored",
-            )?,
-
-        teacher_duration_nanos:
-            get_u128(
-                value,
-                "teacher_duration_nanos",
-            )?,
-
-        teacher_path_length:
-            get_u128(
-                value,
-                "teacher_path_length",
             )?,
 
         maze_width:

@@ -15,8 +15,6 @@ pub enum Direction {
 pub struct SearchStep {
     pub from: Position,
     pub to: Position,
-    pub direction: Direction,
-    pub visit_order: usize,
     pub on_solution_path: bool,
 }
 
