@@ -1,492 +1,345 @@
 # The Labyrinth
 
-A Rust project consisting of two independent but related applications:
+The Labyrinth is a Rust workspace consisting of three independent applications that together create a complete maze generation, solving, and machine learning framework.
 
-## Daedalus
-
-A maze generator.
-
----
-
-### Current Status
-
-Daedalus can generate and export mazes with a random size based on the selected diffuculty. Also allows the user to pick if the maze is a square or not and validates the maze to make sure it is solvable
-
-### Next Feature(s) to be Added
-
-- None at the moment
-
----
-
-## Theseus
-
-An AI-assisted maze solver.
-
----
-
-### Current Status
-
- - Can solve mazes with A*, BFS, DFS, and random stepping
-
-### Next Feature(s) to be Added
-
- - The neural network portion so it can start training
+- **Daedalus** generates perfect mazes.
+- **Theseus** solves mazes using both classical search algorithms and a trainable neural network.
+- **Hermes_01** provides Discord integration for remote maze generation, training control, monitoring, and progress reporting.
 
 ---
 
 # Project Goals
 
-Create a system where:
+The long-term objective of The Labyrinth is to create a machine learning solver capable of solving perfect mazes as efficiently as, or better than, traditional uninformed search algorithms.
 
-1. Daedalus generates solvable mazes.
-2. Daedalus exports those mazes in both human-readable and machine-readable formats.
-3. Theseus receives only the exported maze.
-4. Theseus solves the maze without knowledge of how it was generated.
-5. Theseus eventually learns from large numbers of generated mazes and becomes faster at solving new mazes.
+Rather than hard-coding maze-solving behavior, Theseus learns by observing the best-performing classical algorithm for each generated maze. Over time the neural network is expected to require fewer explored cells while maintaining a 100% solve rate.
 
 ---
 
-## How to Run
+# Workspace Structure
 
-The Labyrinth workspace currently contains three executables:
-
-- **Daedalus** – Maze generator
-- **Theseus** – Maze solver
-- **Hermes** – Discord interface
-
-Each can be run independently from the workspace root.
-
----
-
-### Running Daedalus
-
-Daedalus generates a new maze and exports it to the `output` directory.
-
-```bash
-cargo run -p daedalus
 ```
-
-Output:
-
-- `maze.svg`
-- `maze.json`
-
----
-
-### Running Theseus
-
-Theseus loads the most recently generated maze, solves it using every implemented algorithm, and exports a solution SVG for each solver.
-
-```bash
-cargo run -p theseus
-```
-
-Current solvers:
-
-- Breadth-First Search (BFS)
-- Depth-First Search (DFS)
-- A*
-- Random
-
-Example output:
-
-- `solved_maze_bfs.svg`
-- `solved_maze_dfs.svg`
-- `solved_maze_astar.svg`
-- `solved_maze_random.svg`
-
----
-
-### Running Hermes
-
-Hermes is the Discord bot for The Labyrinth.
-
-Before starting Hermes, ensure a valid Discord bot token is present in your `.env` file.
-
-Start Hermes with:
-
-```bash
-cargo run -p hermes
-```
-
-Once running, Hermes registers its slash commands and waits for requests from Discord.
-
-Current commands:
-
-- `/generate` – Generate a maze.
-- `/theseus` – Execute the current Theseus solver and return the generated solution files.
-- See the Hermes section below for more details
-
----
-
-### Building the Entire Workspace
-
-To compile every crate without running them:
-
-```bash
-cargo build
-```
-
----
-
-### Running Tests
-
-Execute all tests across the workspace:
-
-```bash
-cargo test
+The-Labyrinth/
+│
+├── daedalus/
+│   Maze generation
+│
+├── theseus/
+│   Maze solving
+│   Neural network training
+│
+├── hermes/
+│   Discord bot
+│
+└── output/
+    Generated mazes
+    Solver output
+    Training checkpoints
 ```
 
 ---
 
 # Daedalus
 
-## Purpose
+Daedalus is responsible for generating perfect mazes.
 
-Generate high-quality, solvable mazes for users and for Theseus training.
+## Features
 
-## Maze Rules
-
-All generated mazes:
-
-- Start position: Top-left corner
-- Exit position: Bottom-right corner
-
-### Allowed Movement
-
-- Up
-- Down
-- Left
-- Right
-
-### Forbidden Movement
-
-- Diagonal movement
-
-### Requirements
-
-- Must be solvable
-
----
+- Recursive backtracking maze generation
+- Perfect maze validation
+- Random maze dimensions
+- Four difficulty levels
+- Optional square generation
+- SVG export
+- JSON export
 
 ## Difficulty Levels
 
-### Easy
+| Difficulty | Size |
+|------------|------------|
+| Easy | 20-49 |
+| Medium | 50-99 |
+| Hard | 100-249 |
+| Labyrinthian | 250-1000 |
 
-- Width range: 20–49
-- Height range: 20–49
+Every generated maze contains:
 
-### Medium
-
-- Width range: 50–99
-- Height range: 50–99
-
-### Hard
-
-- Width range: 100–249
-- Height range: 100–249
-
-### Labyrinthian
-
-- Width range: 250–1000
-- Height range: 250–1000
-
----
-
-## Size Generation
-
-### Default Mode
-
-Width and height are randomized independently.
-
-Examples:
-
-- 32 × 47
-- 91 × 53
-- 183 × 241
-- 407 × 982
-
-### Square Mode
-
-Optional toggle.
-
-When enabled:
-
-```text
-Width = Height
-```
-
-Examples:
-
-- 35 × 35
-- 72 × 72
-- 201 × 201
-- 814 × 814
-
----
-
-## Maximum Maze Size
-
-```text
-1000 × 1000 cells
-```
-
-Maximum cell count:
-
-```text
-1,000,000 cells
-```
-
----
-
-## Random Seed Support
-
-Optional seed value.
-
-Example:
-
-```text
-Seed: 123456789
-```
-
-Allows exact maze reproduction.
-
----
-
-## Exports
-
-### SVG
-
-Purpose:
-
-- Human readable
-- Infinitely scalable
-- Printable
-- Viewable in browsers
-
-### JSON
-
-Purpose:
-
-- Machine readable
-- Used by Theseus
-- Official maze specification
-
-Example metadata:
-
-```json
-{
-  "difficulty": "Hard",
-  "width": 183,
-  "height": 241,
-  "start": [0, 0],
-  "exit": [182, 240],
-  "seed": 123456789
-}
-```
-
----
-
-## Future Dataset Mode
-
-Generate large numbers of mazes automatically.
-
-Example:
-
-```text
-Generate 10,000 mazes
-Difficulty: Random
-Output: Dataset folder
-```
-
-Used for AI training.
+- One unique solution
+- Connected graph
+- No isolated cells
+- Entrance at the upper-left
+- Exit at the lower-right
 
 ---
 
 # Theseus
 
-## Purpose
+Theseus is both a traditional maze solver and a machine learning system.
 
-Solve maze files produced by Daedalus.
+## Classical Solvers
 
-Eventually use machine learning to improve solving speed.
+- Breadth-First Search (BFS)
+- Depth-First Search (DFS)
+- Random Search
+- A* Search
 
----
+Each solver records:
 
-## Input
-
-Theseus receives:
-
-- Maze JSON
-
-Optionally:
-
-- SVG visualization
-
-Theseus never receives:
-
-- Generator algorithm
-- Generation seed
-- Hidden solution path
-- Internal Daedalus state
+- Nodes explored
+- Runtime
+- Path length
+- Solution path
 
 ---
 
-## Initial Solver Phase
+# Machine Learning
 
-Before any AI, implement traditional algorithms.
+Theseus trains a neural network to imitate the best-performing classical solver.
 
-### Breadth-First Search (BFS)
-
-**Pros**
-
-- Guaranteed shortest path
-- Reliable
-
-### Depth-First Search (DFS)
-
-**Pros**
-
-- Simple
-- Fast
-
-### A*
-
-**Pros**
-
-- Very efficient
-- Excellent baseline
-
- --- 
-
-## Hermes
-
-Hermes is the Discord interface for **The Labyrinth**. It allows maze generation and solver execution directly from a Discord server using slash commands.
-
-### Current Features
-
-- Generate mazes directly from Discord.
-- Supports all maze difficulties:
-  - Easy
-  - Medium
-  - Hard
-  - Labyrinthian
-- Optional square maze generation.
-- Automatically exports generated mazes as:
-  - SVG
-  - JSON
-- Uploads generated files directly back to Discord.
-- Execute the current Theseus solver directly from Discord.
-- Returns generated solution SVGs after the solver completes.
-- Global slash command registration (no per-server configuration required).
-
-Hermes acts as the control center for The Labyrinth project, providing a simple Discord interface instead of requiring terminal commands.
-
----
-
-## Slash Commands
-
-### `/generate`
-
-Generate a new maze.
-
-**Parameters**
-
-| Parameter | Description | Required |
-|-----------|-------------|----------|
-| difficulty | easy, medium, hard, labyrinthian | Yes |
-| square | Generate a square maze | No |
-
-Example:
+For every generated maze:
 
 ```
-/generate difficulty:hard square:true
+Generate unseen maze
+        ↓
+Evaluate current model
+        ↓
+Run all classical solvers
+        ↓
+Select best teacher
+        ↓
+Generate training examples
+        ↓
+Train neural network
+        ↓
+Save checkpoint
+        ↓
+Repeat
 ```
 
-Outputs:
-
-- maze.svg
-- maze.json
+The neural network learns entirely from generated mazes and does not rely on pre-built datasets.
 
 ---
 
-### `/theseus`
+# Training
 
-Runs the current Theseus solver against the latest maze.
+Training may be started either interactively or through Hermes.
 
-Outputs:
+Training supports:
 
-- solved_maze_bfs.svg
-- solved_maze_dfs.svg
-
-The command also displays the solver output directly in Discord.
-
----
-
-## How to Use
-
-### 1. Start Hermes
-
-From the project workspace:
-
-```bash
-cargo run -p hermes
-```
-
-When Hermes starts successfully you should see:
-
-```
-Hermes is online.
-```
+- Maze-count limited sessions
+- Time-limited sessions
+- Resume from checkpoint
+- Automatic checkpoint rotation
+- Automatic model persistence
+- Unseen-maze evaluation before learning
 
 ---
 
-### 2. Invite Hermes to Your Discord Server
+# Training Checkpoints
 
-Ensure the bot has permission to:
+After every completed maze Theseus creates a checkpoint.
 
-- Use Slash Commands
-- Send Messages
-- Attach Files
-- Read Message History
+Each checkpoint stores:
+
+- Neural network model
+- Total mazes completed
+- Total examples trained
+- Training loss
+- Training accuracy
+- Teacher algorithm
+- Teacher performance
+- Learned solver performance
+- Maze dimensions
+- Timestamp
+
+Only the five newest checkpoints are retained.
 
 ---
 
-### 3. Generate a Maze
+# Hermes_01
 
-Use:
+Hermes_01 provides remote control through Discord.
+
+## Commands
+
+### Maze Generation
 
 ```
 /generate
 ```
 
-Choose:
+Generates a maze using Daedalus.
 
-- difficulty
-- optional square mode
+Options:
 
-Hermes will generate a maze and upload both the SVG and JSON files.
-
----
-
-### 4. Run Theseus
-
-Use:
-
-```
-/theseus
-```
-
-Hermes will:
-
-1. Launch the Theseus crate.
-2. Execute all currently implemented solvers.
-3. Capture console output.
-4. Upload generated solution SVGs.
-5. Report whether execution succeeded or failed.
+- Difficulty
+- Square mode
 
 ---
 
-### 5. Repeat
+### Training
 
-Generate another maze or rerun the solver at any time using the slash commands.
+```
+/training_start
+```
+
+Starts a brand-new training session.
+
+Supports:
+
+- Number of mazes
+- Number of hours
+
+---
+
+```
+/training_resume
+```
+
+Continues training from the newest checkpoint.
+
+Supports:
+
+- Number of mazes
+- Number of hours
+
+---
+
+```
+/training_status
+```
+
+Displays the current training session.
+
+Includes:
+
+- Current maze count
+- Total examples
+- Current teacher
+- Latest performance
+- Training progress
+
+---
+
+```
+/training_data
+```
+
+Displays information from the newest checkpoint.
+
+---
+
+# Automatic Progress Updates
+
+While training is active Hermes:
+
+- Launches Theseus in the background
+- Monitors checkpoint files
+- Posts Discord updates every 10 minutes
+- Reports training completion
+- Reports unexpected failures
+
+---
+
+# Running the Applications
+
+## Daedalus
+
+```
+cargo run -p daedalus
+```
+
+---
+
+## Theseus
+
+Interactive mode:
+
+```
+cargo run -p theseus
+```
+
+Command line mode:
+
+```
+cargo run -p theseus -- train-new --mazes 1000
+```
+
+```
+cargo run -p theseus -- train-new --hours 5
+```
+
+```
+cargo run -p theseus -- train-resume --mazes 1000
+```
+
+```
+cargo run -p theseus -- train-resume --hours 5
+```
+
+```
+cargo run -p theseus -- training-stats
+```
+
+---
+
+## Hermes
+
+```
+cargo run -p hermes
+```
+
+---
+
+# Output
+
+Generated files are written to:
+
+```
+output/
+```
+
+Including:
+
+```
+maze.json
+maze.svg
+
+solved_maze_bfs.svg
+solved_maze_dfs.svg
+solved_maze_random.svg
+solved_maze_astar.svg
+
+theseus/
+    checkpoints/
+```
+
+---
+
+# Current Status
+
+Current implementation includes:
+
+- ✅ Perfect maze generation
+- ✅ Maze validation
+- ✅ Four classical solvers
+- ✅ Automatic benchmarking
+- ✅ Teacher selection
+- ✅ Neural network implementation
+- ✅ Machine learning pipeline
+- ✅ Checkpoint persistence
+- ✅ Resume training
+- ✅ Discord integration
+- ✅ Remote training control
+- ✅ Automatic training progress updates
+- ✅ Zero compiler warnings
+
+---
+
+# Future Goals
+
+- Improve learned solver performance
+- Benchmark learned solver against classical algorithms
+- Training history visualization
+- Additional neural network experimentation
+- Distributed training support

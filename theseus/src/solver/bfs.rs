@@ -3,7 +3,7 @@ use std::time::Instant;
 
 use crate::maze::maze::Maze;
 use crate::solver::solver::{
-    Position, SearchStep, SolutionStats, SolverOutput, direction_between, mark_solution_path,
+    Position, SearchStep, SolutionStats, SolverOutput, mark_solution_path,
 };
 
 pub fn solve(maze: &Maze) -> SolverOutput {
