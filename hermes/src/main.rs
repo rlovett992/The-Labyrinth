@@ -47,6 +47,9 @@ struct Data {
 
     next_training_id:
         Arc<AtomicU64>,
+
+    emergency_channel_id:
+        serenity::ChannelId,
 }
 
 type Error =
@@ -404,6 +407,9 @@ async fn start_training_process(
     let shared_training =
         ctx.data().training.clone();
 
+    let emergency_channel_id =
+        ctx.data().emergency_channel_id;
+
     tokio::spawn(async move {
         monitor_training(
             http,
@@ -412,6 +418,7 @@ async fn start_training_process(
             training_id,
             stdout_path,
             stderr_path,
+            emergency_channel_id,
         )
         .await;
     });
@@ -427,6 +434,8 @@ async fn monitor_training(
     training_id: u64,
     stdout_path: PathBuf,
     stderr_path: PathBuf,
+    emergency_channel_id:
+        serenity::ChannelId,
 ) {
     let mut last_update =
         Instant::now();
@@ -468,7 +477,7 @@ async fn monitor_training(
                     Some((
                         channel_id,
                         elapsed,
-                        Some(status.success()),
+                        Some(status),
                     ))
                 }
 
@@ -483,17 +492,20 @@ async fn monitor_training(
                 }
 
                 Err(error) => {
-                    let channel_id =
-                        training.channel_id;
-
                     *guard = None;
 
                     let message = format!(
-                        "Theseus training monitor failed: \
-                         {error}"
+                        "🚨 Theseus Training Monitor Failed\n\
+                         Reason: Hermes could not check whether the \
+                         Theseus process was still running.\n\
+                         Error: `{error}`\n\
+                         Training ID: {training_id}\n\
+                         Logs:\n`{}`\n`{}`",
+                        stdout_path.display(),
+                        stderr_path.display(),
                     );
 
-                    let _ = channel_id
+                    let _ = emergency_channel_id
                         .say(&http, message)
                         .await;
 
@@ -511,7 +523,7 @@ async fn monitor_training(
             return;
         };
 
-        if let Some(success) = completion {
+        if let Some(status) = completion {
             let checkpoint =
                 load_newest_checkpoint_summary(
                     &workspace,
@@ -519,57 +531,115 @@ async fn monitor_training(
                 .ok()
                 .flatten();
 
-            let title = if success {
-                "Theseus Training Finished"
-            } else {
-                "Theseus Training Failed"
-            };
-
-            let message =
-                match checkpoint {
-                    Some(checkpoint) => {
-                        let mut message =
+            if status.success() {
+                let message =
+                    match checkpoint {
+                        Some(checkpoint) => {
                             format_checkpoint_message(
-                                title,
+                                "Theseus Training Finished",
                                 &checkpoint,
                                 Some(elapsed),
-                            );
-
-                        if !success {
-                            message.push_str(
-                                "\n\nCheck the Hermes training logs:",
-                            );
-                            message.push_str(
-                                &format!(
-                                    "\n`{}`\n`{}`",
-                                    stdout_path.display(),
-                                    stderr_path.display(),
-                                ),
-                            );
+                            )
                         }
 
-                        message
-                    }
+                        None => {
+                            format!(
+                                "Theseus Training Finished\n\
+                                 Elapsed: {}\n\
+                                 No compatible checkpoint was found.\n\
+                                 Logs:\n`{}`\n`{}`",
+                                format_duration(elapsed),
+                                stdout_path.display(),
+                                stderr_path.display(),
+                            )
+                        }
+                    };
 
-                    None => {
-                        format!(
-                            "{title}\n\
-                             Elapsed: {}\n\
-                             No compatible checkpoint was found.\n\
-                             Logs:\n`{}`\n`{}`",
-                            format_duration(elapsed),
-                            stdout_path.display(),
-                            stderr_path.display(),
-                        )
-                    }
-                };
+                let _ =
+                    channel_id.say(
+                        &http,
+                        message,
+                    )
+                    .await;
+            } else {
+                let stderr_excerpt =
+                    read_log_excerpt(
+                        &stderr_path,
+                        1_200,
+                    );
 
-            let _ =
-                channel_id.say(
-                    &http,
-                    message,
-                )
-                .await;
+                let failure_reason =
+                    classify_process_failure(
+                        &status,
+                        stderr_excerpt.as_deref(),
+                    );
+
+                let mut message = format!(
+                    "🚨 Theseus Training Ended Unexpectedly\n\
+                     Reason: {failure_reason}\n\
+                     Elapsed: {}\n\
+                     Training ID: {training_id}",
+                    format_duration(elapsed),
+                );
+
+                if let Some(checkpoint) =
+                    checkpoint.as_ref()
+                {
+                    message.push_str(
+                        &format!(
+                            "\nLatest checkpoint:\n\
+                             - Mazes completed: {}\n\
+                             - Examples trained: {}\n\
+                             - Loss: {:.6}\n\
+                             - Accuracy: {:.2}%",
+                            checkpoint.mazes_completed,
+                            checkpoint.total_examples_trained,
+                            checkpoint.latest_training_loss,
+                            checkpoint.latest_training_accuracy
+                                * 100.0,
+                        ),
+                    );
+                } else {
+                    message.push_str(
+                        "\nLatest checkpoint: No compatible \
+                         checkpoint was found.",
+                    );
+                }
+
+                if let Some(stderr_excerpt) =
+                    stderr_excerpt
+                {
+                    message.push_str(
+                        "\n\nFinal stderr output:\n```text\n",
+                    );
+
+                    message.push_str(
+                        &stderr_excerpt,
+                    );
+
+                    message.push_str("\n```");
+                }
+
+                message.push_str(
+                    &format!(
+                        "\n\nFull logs:\n`{}`\n`{}`",
+                        stdout_path.display(),
+                        stderr_path.display(),
+                    ),
+                );
+
+                let message =
+                    truncate_discord_message(
+                        message,
+                    );
+
+                let _ =
+                    emergency_channel_id.say(
+                        &http,
+                        message,
+                    )
+                    .await;
+            }
 
             return;
         }
@@ -618,6 +688,129 @@ async fn monitor_training(
         }
     }
 }
+
+fn classify_process_failure(
+    status: &std::process::ExitStatus,
+    stderr_excerpt: Option<&str>,
+) -> String {
+    if let Some(stderr) = stderr_excerpt {
+        let lowercase =
+            stderr.to_lowercase();
+
+        if lowercase.contains("panicked at")
+            || (
+                lowercase.contains("thread '")
+                    && lowercase.contains(
+                        "panicked",
+                    )
+            )
+        {
+            return "Rust panic".to_string();
+        }
+
+        if lowercase.contains(
+            "out of memory",
+        )
+            || lowercase.contains(
+                "memory allocation",
+            )
+        {
+            return "Possible out-of-memory failure"
+                .to_string();
+        }
+
+        if lowercase.contains(
+            "access is denied",
+        )
+            || lowercase.contains(
+                "permission denied",
+            )
+        {
+            return "File or permission error"
+                .to_string();
+        }
+    }
+
+    match status.code() {
+        Some(code) => {
+            format!(
+                "Process exited with nonzero code {code}"
+            )
+        }
+
+        None => {
+            "Process was terminated without an exit code. \
+             It may have been killed, interrupted, or stopped \
+             by the operating system."
+                .to_string()
+        }
+    }
+}
+
+fn read_log_excerpt(
+    path: &Path,
+    maximum_characters: usize,
+) -> Option<String> {
+    let contents =
+        fs::read_to_string(path).ok()?;
+
+    let trimmed = contents.trim();
+
+    if trimmed.is_empty() {
+        return None;
+    }
+
+    let character_count =
+        trimmed.chars().count();
+
+    if character_count
+        <= maximum_characters
+    {
+        return Some(trimmed.to_string());
+    }
+
+    let excerpt: String =
+        trimmed
+            .chars()
+            .skip(
+                character_count
+                    - maximum_characters,
+            )
+            .collect();
+
+    Some(format!(
+        "...{excerpt}"
+    ))
+}
+
+fn truncate_discord_message(
+    message: String,
+) -> String {
+    const MAXIMUM_LENGTH: usize = 1_950;
+
+    let character_count =
+        message.chars().count();
+
+    if character_count
+        <= MAXIMUM_LENGTH
+    {
+        return message;
+    }
+
+    let shortened: String =
+        message
+            .chars()
+            .take(
+                MAXIMUM_LENGTH
+                    - 40,
+            )
+            .collect();
+
+    format!(
+        "{shortened}\n...[message truncated]"
+    )
+}
+
 
 fn training_command(
     mode: TrainingMode,
@@ -1094,6 +1287,20 @@ async fn main() {
                 "Missing DISCORD_TOKEN in .env file",
             );
 
+    let emergency_channel_id =
+        serenity::ChannelId::new(
+            std::env::var(
+                "EMERGENCY_CHANNEL_ID",
+            )
+            .expect(
+                "Missing EMERGENCY_CHANNEL_ID in .env file",
+            )
+            .parse::<u64>()
+            .expect(
+                "EMERGENCY_CHANNEL_ID must be a valid Discord channel ID",
+            ),
+        );
+
     let intents =
         serenity::GatewayIntents::non_privileged();
 
@@ -1112,7 +1319,7 @@ async fn main() {
                 },
             )
             .setup(
-                |ctx, _ready, framework| {
+                move |ctx, _ready, framework| {
                     Box::pin(async move {
                         poise::builtins::register_globally(
                             ctx,
@@ -1136,6 +1343,8 @@ async fn main() {
                                         1,
                                     ),
                                 ),
+
+                            emergency_channel_id,
                         })
                     })
                 },
