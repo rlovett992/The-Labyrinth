@@ -3,7 +3,7 @@ pub enum Difficulty {
     Easy,
     Medium,
     Hard,
-    Labyrinthian
+    Labyrinthian,
 }
 
 impl Difficulty {

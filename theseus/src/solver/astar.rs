@@ -4,12 +4,7 @@ use std::time::Instant;
 
 use crate::maze::maze::Maze;
 use crate::solver::solver::{
-    Position,
-    SearchStep,
-    SolutionStats,
-    SolverOutput,
-    direction_between,
-    mark_solution_path,
+    Position, SearchStep, SolutionStats, SolverOutput, direction_between, mark_solution_path,
 };
 
 #[derive(Clone, Copy, Debug, Eq, PartialEq)]
@@ -67,13 +62,7 @@ pub fn solve(maze: &Maze) -> SolverOutput {
 
         nodes_explored += 1;
 
-        record_search_step(
-            current,
-            start,
-            nodes_explored,
-            &came_from,
-            &mut trace,
-        );
+        record_search_step(current, start, nodes_explored, &came_from, &mut trace);
 
         if current == goal {
             let path = reconstruct_path(&came_from, start, goal);
@@ -96,17 +85,14 @@ pub fn solve(maze: &Maze) -> SolverOutput {
         for neighbor in maze.neighbors(current) {
             let tentative_g_score = current_best_g + 1;
 
-            if tentative_g_score
-                < *g_scores.get(&neighbor).unwrap_or(&usize::MAX)
-            {
+            if tentative_g_score < *g_scores.get(&neighbor).unwrap_or(&usize::MAX) {
                 came_from.insert(neighbor, current);
                 g_scores.insert(neighbor, tentative_g_score);
 
                 open_set.push(Node {
                     position: neighbor,
                     g_score: tentative_g_score,
-                    f_score: tentative_g_score
-                        + heuristic(neighbor, goal),
+                    f_score: tentative_g_score + heuristic(neighbor, goal),
                 });
             }
         }

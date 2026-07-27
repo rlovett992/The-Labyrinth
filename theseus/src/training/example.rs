@@ -3,11 +3,7 @@ use std::error::Error;
 use std::fmt;
 
 use crate::maze::maze::Maze;
-use crate::solver::solver::{
-    Direction,
-    Position,
-    direction_between,
-};
+use crate::solver::solver::{Direction, Position, direction_between};
 
 /// One supervised-learning example created from a teacher solution path.
 ///
@@ -115,8 +111,7 @@ impl fmt::Display for TrainingExampleError {
                 write!(
                     formatter,
                     "teacher path position ({}, {}) is outside the maze",
-                    position.0,
-                    position.1
+                    position.0, position.1
                 )
             }
             TrainingExampleError::NonAdjacentPositions { from, to } => {
@@ -124,10 +119,7 @@ impl fmt::Display for TrainingExampleError {
                     formatter,
                     "teacher path contains non-adjacent positions: \
                      ({}, {}) to ({}, {})",
-                    from.0,
-                    from.1,
-                    to.0,
-                    to.1
+                    from.0, from.1, to.0, to.1
                 )
             }
             TrainingExampleError::TeacherMovedThroughWall {
@@ -139,11 +131,7 @@ impl fmt::Display for TrainingExampleError {
                     formatter,
                     "teacher attempted to move through a wall from \
                      ({}, {}) to ({}, {}) heading {:?}",
-                    from.0,
-                    from.1,
-                    to.0,
-                    to.1,
-                    direction
+                    from.0, from.1, to.0, to.1, direction
                 )
             }
         }
@@ -167,10 +155,7 @@ pub fn create_training_examples(
 
     validate_position(maze, teacher_path[0])?;
 
-    let goal = (
-        maze.width.saturating_sub(1),
-        maze.height.saturating_sub(1),
-    );
+    let goal = (maze.width.saturating_sub(1), maze.height.saturating_sub(1));
 
     let mut visited_positions = HashSet::new();
     let mut examples = Vec::with_capacity(teacher_path.len() - 1);
@@ -183,54 +168,29 @@ pub fn create_training_examples(
         validate_position(maze, next)?;
 
         let target_direction =
-            direction_between(current, next).ok_or(
-                TrainingExampleError::NonAdjacentPositions {
-                    from: current,
-                    to: next,
-                },
-            )?;
+            direction_between(current, next).ok_or(TrainingExampleError::NonAdjacentPositions {
+                from: current,
+                to: next,
+            })?;
 
         if !direction_is_open(maze, current, target_direction) {
-            return Err(
-                TrainingExampleError::TeacherMovedThroughWall {
-                    from: current,
-                    to: next,
-                    direction: target_direction,
-                },
-            );
+            return Err(TrainingExampleError::TeacherMovedThroughWall {
+                from: current,
+                to: next,
+                direction: target_direction,
+            });
         }
 
         let cell = &maze.cells[current.1][current.0];
 
         let example = TrainingExample {
             position: current,
-            walls: [
-                cell.north,
-                cell.east,
-                cell.south,
-                cell.west,
-            ],
-            current_x_ratio: normalize_coordinate(
-                current.0,
-                maze.width,
-            ),
-            current_y_ratio: normalize_coordinate(
-                current.1,
-                maze.height,
-            ),
-            goal_x_ratio: normalize_coordinate(
-                goal.0,
-                maze.width,
-            ),
-            goal_y_ratio: normalize_coordinate(
-                goal.1,
-                maze.height,
-            ),
-            visited_neighbors: visited_neighbor_states(
-                maze,
-                current,
-                &visited_positions,
-            ),
+            walls: [cell.north, cell.east, cell.south, cell.west],
+            current_x_ratio: normalize_coordinate(current.0, maze.width),
+            current_y_ratio: normalize_coordinate(current.1, maze.height),
+            goal_x_ratio: normalize_coordinate(goal.0, maze.width),
+            goal_y_ratio: normalize_coordinate(goal.1, maze.height),
+            visited_neighbors: visited_neighbor_states(maze, current, &visited_positions),
             target_direction,
         };
 
@@ -246,25 +206,15 @@ pub fn create_training_examples(
     Ok(examples)
 }
 
-fn validate_position(
-    maze: &Maze,
-    position: Position,
-) -> Result<(), TrainingExampleError> {
+fn validate_position(maze: &Maze, position: Position) -> Result<(), TrainingExampleError> {
     if position.0 >= maze.width || position.1 >= maze.height {
-        return Err(
-            TrainingExampleError::PositionOutsideMaze {
-                position,
-            },
-        );
+        return Err(TrainingExampleError::PositionOutsideMaze { position });
     }
 
     Ok(())
 }
 
-fn normalize_coordinate(
-    coordinate: usize,
-    dimension: usize,
-) -> f32 {
+fn normalize_coordinate(coordinate: usize, dimension: usize) -> f32 {
     if dimension <= 1 {
         return 0.0;
     }
@@ -279,49 +229,56 @@ fn visited_neighbor_states(
 ) -> [bool; 4] {
     let (x, y) = position;
 
-    let north = y > 0
-        && visited_positions.contains(&(x, y - 1));
+    let north = y > 0 && visited_positions.contains(&(x, y - 1));
 
-    let east = x + 1 < maze.width
-        && visited_positions.contains(&(x + 1, y));
+    let east = x + 1 < maze.width && visited_positions.contains(&(x + 1, y));
 
-    let south = y + 1 < maze.height
-        && visited_positions.contains(&(x, y + 1));
+    let south = y + 1 < maze.height && visited_positions.contains(&(x, y + 1));
 
-    let west = x > 0
-        && visited_positions.contains(&(x - 1, y));
+    let west = x > 0 && visited_positions.contains(&(x - 1, y));
 
     [north, east, south, west]
 }
 
-fn direction_is_open(
-    maze: &Maze,
-    position: Position,
-    direction: Direction,
-) -> bool {
+fn direction_is_open(maze: &Maze, position: Position, direction: Direction) -> bool {
     let (x, y) = position;
     let cell = &maze.cells[y][x];
 
     match direction {
-        Direction::North => {
-            !cell.north && y > 0
-        }
-        Direction::East => {
-            !cell.east && x + 1 < maze.width
-        }
-        Direction::South => {
-            !cell.south && y + 1 < maze.height
-        }
-        Direction::West => {
-            !cell.west && x > 0
-        }
+        Direction::North => !cell.north && y > 0,
+        Direction::East => !cell.east && x + 1 < maze.width,
+        Direction::South => !cell.south && y + 1 < maze.height,
+        Direction::West => !cell.west && x > 0,
     }
 }
 
+pub fn encode_maze_state(
+    maze: &Maze,
+    position: Position,
+    visited_positions: &HashSet<Position>,
+) -> [f32; 12] {
+    let cell = &maze.cells[position.1][position.0];
+
+    let goal = (maze.width.saturating_sub(1), maze.height.saturating_sub(1));
+
+    let visited_neighbors = visited_neighbor_states(maze, position, visited_positions);
+
+    [
+        bool_to_f32(cell.north),
+        bool_to_f32(cell.east),
+        bool_to_f32(cell.south),
+        bool_to_f32(cell.west),
+        normalize_coordinate(position.0, maze.width),
+        normalize_coordinate(position.1, maze.height),
+        normalize_coordinate(goal.0, maze.width),
+        normalize_coordinate(goal.1, maze.height),
+        bool_to_f32(visited_neighbors[0]),
+        bool_to_f32(visited_neighbors[1]),
+        bool_to_f32(visited_neighbors[2]),
+        bool_to_f32(visited_neighbors[3]),
+    ]
+}
+
 fn bool_to_f32(value: bool) -> f32 {
-    if value {
-        1.0
-    } else {
-        0.0
-    }
+    if value { 1.0 } else { 0.0 }
 }

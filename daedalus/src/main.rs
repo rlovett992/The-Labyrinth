@@ -5,7 +5,6 @@ use daedalus::validator;
 use std::fs;
 use std::io::{self, Write};
 
-
 fn main() -> std::io::Result<()> {
     let difficulty = choose_difficulty()?;
     let square_mode = square_mode()?;
@@ -27,11 +26,16 @@ fn main() -> std::io::Result<()> {
     export_json(&maze, "output/maze.json")?;
     export_svg(&maze, "output/maze.svg")?;
 
-    println!("Generated {} maze: {}x{}", difficulty.label(), maze.width, maze.height);
+    println!(
+        "Generated {} maze: {}x{}",
+        difficulty.label(),
+        maze.width,
+        maze.height
+    );
 
     println!("Exported JSON to output/maze.json");
     println!("Exported SVG to output/maze.svg");
-    
+
     Ok(())
 }
 
@@ -54,7 +58,7 @@ fn choose_difficulty() -> std::io::Result<Difficulty> {
             "2" => return Ok(Difficulty::Medium),
             "3" => return Ok(Difficulty::Hard),
             "4" => return Ok(Difficulty::Labyrinthian),
-            _ => println!("Invalid choice. Please enter 1, 2, 3, or 4.\n")
+            _ => println!("Invalid choice. Please enter 1, 2, 3, or 4.\n"),
         }
     }
 }
@@ -70,7 +74,7 @@ fn square_mode() -> std::io::Result<bool> {
         match input.trim().to_lowercase().as_str() {
             "y" | "yes" => return Ok(true),
             "n" | "no" => return Ok(false),
-            _ => println!("Invalid choice. Please enter y of n.\n")
+            _ => println!("Invalid choice. Please enter y of n.\n"),
         }
     }
 }

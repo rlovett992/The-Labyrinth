@@ -123,12 +123,7 @@ pub fn export_solution_svg_bfs(
     trace: &[SearchStep],
     path: &[Position],
 ) -> io::Result<()> {
-    export_solution_svg(
-        maze,
-        trace,
-        path,
-        "output/solved_maze_bfs.svg",
-    )
+    export_solution_svg(maze, trace, path, "output/solved_maze_bfs.svg")
 }
 
 /// Export a DFS solution.
@@ -137,12 +132,7 @@ pub fn export_solution_svg_dfs(
     trace: &[SearchStep],
     path: &[Position],
 ) -> io::Result<()> {
-    export_solution_svg(
-        maze,
-        trace,
-        path,
-        "output/solved_maze_dfs.svg",
-    )
+    export_solution_svg(maze, trace, path, "output/solved_maze_dfs.svg")
 }
 
 /// Export an A* solution.
@@ -151,12 +141,7 @@ pub fn export_solution_svg_astar(
     trace: &[SearchStep],
     path: &[Position],
 ) -> io::Result<()> {
-    export_solution_svg(
-        maze,
-        trace,
-        path,
-        "output/solved_maze_astar.svg",
-    )
+    export_solution_svg(maze, trace, path, "output/solved_maze_astar.svg")
 }
 
 /// Export a Random solution.
@@ -165,10 +150,5 @@ pub fn export_solution_svg_random(
     trace: &[SearchStep],
     path: &[Position],
 ) -> io::Result<()> {
-    export_solution_svg(
-        maze,
-        trace,
-        path,
-        "output/solved_maze_random.svg",
-    )
+    export_solution_svg(maze, trace, path, "output/solved_maze_random.svg")
 }

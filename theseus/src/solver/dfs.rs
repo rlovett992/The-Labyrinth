@@ -3,12 +3,7 @@ use std::time::Instant;
 
 use crate::maze::maze::Maze;
 use crate::solver::solver::{
-    Position,
-    SearchStep,
-    SolutionStats,
-    SolverOutput,
-    direction_between,
-    mark_solution_path,
+    Position, SearchStep, SolutionStats, SolverOutput, direction_between, mark_solution_path,
 };
 
 pub fn solve(maze: &Maze) -> SolverOutput {
@@ -29,13 +24,7 @@ pub fn solve(maze: &Maze) -> SolverOutput {
     while let Some(current) = stack.pop() {
         nodes_explored += 1;
 
-        record_search_step(
-            current,
-            start,
-            nodes_explored,
-            &came_from,
-            &mut trace,
-        );
+        record_search_step(current, start, nodes_explored, &came_from, &mut trace);
 
         if current == goal {
             let path = reconstruct_path(&came_from, start, goal);

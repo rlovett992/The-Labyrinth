@@ -5,7 +5,7 @@ pub struct Cell {
     pub visited: bool,
     pub north: bool,
     pub east: bool,
-    pub south: bool, 
+    pub south: bool,
     pub west: bool,
 }
 

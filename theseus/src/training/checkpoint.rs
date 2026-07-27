@@ -19,6 +19,11 @@ pub struct TrainingCheckpoint {
     pub latest_training_loss: f32,
     pub latest_training_accuracy: f32,
 
+    pub theseus_solved: bool,
+    pub theseus_nodes_explored: usize,
+    pub theseus_duration_nanos: u128,
+    pub theseus_path_length: usize,
+
     pub latest_teacher: String,
     pub teacher_nodes_explored: usize,
     pub teacher_duration_nanos: u128,
@@ -30,16 +35,13 @@ pub struct TrainingCheckpoint {
     pub saved_at_unix_seconds: u64,
 }
 
-pub fn save_checkpoint(
-    checkpoint: &TrainingCheckpoint,
-) -> io::Result<PathBuf> {
+pub fn save_checkpoint(checkpoint: &TrainingCheckpoint) -> io::Result<PathBuf> {
     fs::create_dir_all(CHECKPOINT_DIRECTORY)?;
 
     let destination = choose_checkpoint_slot()?;
     let temporary = destination.with_extension("tmp");
 
-    let json = serde_json::to_string_pretty(checkpoint)
-        .map_err(io::Error::other)?;
+    let json = serde_json::to_string_pretty(checkpoint).map_err(io::Error::other)?;
 
     fs::write(&temporary, json)?;
 
@@ -52,21 +54,15 @@ pub fn save_checkpoint(
     Ok(destination)
 }
 
-pub fn load_newest_checkpoint(
-) -> io::Result<Option<TrainingCheckpoint>> {
+pub fn load_newest_checkpoint() -> io::Result<Option<TrainingCheckpoint>> {
     let checkpoints = load_all_checkpoints()?;
 
-    Ok(
-        checkpoints
-            .into_iter()
-            .max_by_key(|checkpoint| {
-                checkpoint.mazes_completed
-            }),
-    )
+    Ok(checkpoints
+        .into_iter()
+        .max_by_key(|checkpoint| checkpoint.mazes_completed))
 }
 
-pub fn load_all_checkpoints(
-) -> io::Result<Vec<TrainingCheckpoint>> {
+pub fn load_all_checkpoints() -> io::Result<Vec<TrainingCheckpoint>> {
     let mut checkpoints = Vec::new();
 
     for slot in 1..=CHECKPOINT_SLOTS {
@@ -132,11 +128,8 @@ fn choose_checkpoint_slot() -> io::Result<PathBuf> {
 
         match read_checkpoint(&path) {
             Ok(checkpoint) => {
-                if checkpoint.mazes_completed
-                    < oldest_completed
-                {
-                    oldest_completed =
-                        checkpoint.mazes_completed;
+                if checkpoint.mazes_completed < oldest_completed {
+                    oldest_completed = checkpoint.mazes_completed;
 
                     oldest_slot = slot;
                 }
@@ -150,16 +143,12 @@ fn choose_checkpoint_slot() -> io::Result<PathBuf> {
     Ok(checkpoint_path(oldest_slot))
 }
 
-fn read_checkpoint(
-    path: &Path,
-) -> io::Result<TrainingCheckpoint> {
+fn read_checkpoint(path: &Path) -> io::Result<TrainingCheckpoint> {
     let json = fs::read_to_string(path)?;
 
-    serde_json::from_str(&json)
-        .map_err(io::Error::other)
+    serde_json::from_str(&json).map_err(io::Error::other)
 }
 
 fn checkpoint_path(slot: usize) -> PathBuf {
-    Path::new(CHECKPOINT_DIRECTORY)
-        .join(format!("checkpoint_{slot}.json"))
+    Path::new(CHECKPOINT_DIRECTORY).join(format!("checkpoint_{slot}.json"))
 }

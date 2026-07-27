@@ -3,12 +3,7 @@ use std::time::{Instant, SystemTime, UNIX_EPOCH};
 
 use crate::maze::maze::Maze;
 use crate::solver::solver::{
-    Position,
-    SearchStep,
-    SolutionStats,
-    SolverOutput,
-    direction_between,
-    mark_solution_path,
+    Position, SearchStep, SolutionStats, SolverOutput, direction_between, mark_solution_path,
 };
 
 pub fn solve(maze: &Maze) -> SolverOutput {
@@ -30,13 +25,7 @@ pub fn solve(maze: &Maze) -> SolverOutput {
     while let Some(current) = stack.pop() {
         nodes_explored += 1;
 
-        record_search_step(
-            current,
-            start,
-            nodes_explored,
-            &came_from,
-            &mut trace,
-        );
+        record_search_step(current, start, nodes_explored, &came_from, &mut trace);
 
         if current == goal {
             let path = reconstruct_path(&came_from, start, goal);
@@ -147,10 +136,7 @@ impl SimpleRng {
     }
 
     fn next_usize(&mut self, max: usize) -> usize {
-        self.state = self
-            .state
-            .wrapping_mul(6364136223846793005)
-            .wrapping_add(1);
+        self.state = self.state.wrapping_mul(6364136223846793005).wrapping_add(1);
 
         (self.state as usize) % max
     }

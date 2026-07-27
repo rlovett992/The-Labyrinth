@@ -534,6 +534,7 @@ dependencies = [
  "daedalus",
  "dotenvy",
  "poise",
+ "serde_json",
  "tokio",
 ]
 

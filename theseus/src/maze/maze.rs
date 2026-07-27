@@ -4,7 +4,7 @@ use serde::Deserialize;
 pub struct Maze {
     pub width: usize,
     pub height: usize,
-    pub cells: Vec<Vec<Cell>>
+    pub cells: Vec<Vec<Cell>>,
 }
 
 #[allow(dead_code)]
@@ -14,7 +14,7 @@ pub struct Cell {
     pub east: bool,
     pub south: bool,
     pub west: bool,
-    pub visited: bool
+    pub visited: bool,
 }
 impl Maze {
     pub fn neighbors(&self, position: (usize, usize)) -> Vec<(usize, usize)> {

@@ -41,8 +41,7 @@ fn carve_iterative(maze: &mut Maze) {
         let mut carved = false;
 
         for direction in directions {
-            let Some((next_x, next_y)) =
-                get_neighbor(x, y, direction, maze.width, maze.height)
+            let Some((next_x, next_y)) = get_neighbor(x, y, direction, maze.width, maze.height)
             else {
                 continue;
             };
