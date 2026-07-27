@@ -1,0 +1,28 @@
+
+=== Training Session Started ===
+Session target: 15 maze(s)
+Previous mazes completed: 106
+Previous examples trained: 2994184
+
+Maze 1/15 | Total 107 | Labyrinthian  | Theseus: Solved | Theseus nodes: 25272 | Teacher: A* | Teacher nodes: 78439 | Difference: -53167 | Examples: 19852 | Loss: 0.038939 | Accuracy: 97.78% | Elapsed: 00:00:00
+Maze 2/15 | Total 108 | Easy          | Theseus: Solved | Theseus nodes: 918 | Teacher: Random | Teacher nodes: 1071 | Difference: -153 | Examples: 733 | Loss: 0.054277 | Accuracy: 97.00% | Elapsed: 00:00:00
+Maze 3/15 | Total 109 | Hard          | Theseus: Solved | Theseus nodes: 10018 | Teacher: DFS | Teacher nodes: 11075 | Difference: -1057 | Examples: 5420 | Loss: 0.036683 | Accuracy: 98.12% | Elapsed: 00:00:00
+Maze 4/15 | Total 110 | Labyrinthian  | Theseus: Solved | Theseus nodes: 103350 | Teacher: DFS | Teacher nodes: 143928 | Difference: -40578 | Examples: 65350 | Loss: 0.038472 | Accuracy: 97.78% | Elapsed: 00:00:00
+Maze 5/15 | Total 111 | Medium        | Theseus: Solved | Theseus nodes: 2116 | Teacher: Random | Teacher nodes: 2621 | Difference: -505 | Examples: 1760 | Loss: 0.040309 | Accuracy: 97.84% | Elapsed: 00:00:00
+Maze 6/15 | Total 112 | Labyrinthian  | Theseus: Solved | Theseus nodes: 85201 | Teacher: A* | Teacher nodes: 178247 | Difference: -93046 | Examples: 45208 | Loss: 0.038152 | Accuracy: 97.84% | Elapsed: 00:00:01
+Maze 7/15 | Total 113 | Medium        | Theseus: Solved | Theseus nodes: 2091 | Teacher: DFS | Teacher nodes: 2320 | Difference: -229 | Examples: 1733 | Loss: 0.048771 | Accuracy: 97.06% | Elapsed: 00:00:01
+Maze 8/15 | Total 114 | Medium        | Theseus: Solved | Theseus nodes: 3411 | Teacher: Random | Teacher nodes: 4715 | Difference: -1304 | Examples: 2473 | Loss: 0.045580 | Accuracy: 97.70% | Elapsed: 00:00:01
+Maze 9/15 | Total 115 | Labyrinthian  | Theseus: Solved | Theseus nodes: 36155 | Teacher: DFS | Teacher nodes: 47173 | Difference: -11018 | Examples: 24790 | Loss: 0.039986 | Accuracy: 97.70% | Elapsed: 00:00:01
+Maze 10/15 | Total 116 | Labyrinthian  | Theseus: Solved | Theseus nodes: 27723 | Teacher: Random | Teacher nodes: 31117 | Difference: -3394 | Examples: 21152 | Loss: 0.040271 | Accuracy: 97.60% | Elapsed: 00:00:01
+Maze 11/15 | Total 117 | Labyrinthian  | Theseus: Solved | Theseus nodes: 189050 | Teacher: DFS | Teacher nodes: 161307 | Difference: +27743 | Examples: 63035 | Loss: 0.039534 | Accuracy: 97.74% | Elapsed: 00:00:01
+Maze 12/15 | Total 118 | Labyrinthian  | Theseus: Solved | Theseus nodes: 68310 | Teacher: Random | Teacher nodes: 78755 | Difference: -10445 | Examples: 44105 | Loss: 0.039689 | Accuracy: 97.63% | Elapsed: 00:00:02
+Maze 13/15 | Total 119 | Hard          | Theseus: Solved | Theseus nodes: 9286 | Teacher: Random | Teacher nodes: 7938 | Difference: +1348 | Examples: 5914 | Loss: 0.042311 | Accuracy: 97.62% | Elapsed: 00:00:02
+Maze 14/15 | Total 120 | Hard          | Theseus: Solved | Theseus nodes: 3269 | Teacher: A* | Teacher nodes: 6209 | Difference: -2940 | Examples: 2747 | Loss: 0.036303 | Accuracy: 97.93% | Elapsed: 00:00:02
+Maze 15/15 | Total 121 | Hard          | Theseus: Solved | Theseus nodes: 18067 | Teacher: DFS | Teacher nodes: 20302 | Difference: -2235 | Examples: 10208 | Loss: 0.045159 | Accuracy: 97.33% | Elapsed: 00:00:02
+
+=== Training Session Finished ===
+Session mazes completed: 15
+Total mazes completed:   121
+Total examples trained:  3308664
+Session elapsed time:    00:00:02
+Stop reason:            Maze limit reached
