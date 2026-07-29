@@ -1,3 +1,2 @@
-   Compiling theseus v0.1.0 (C:\Users\rlove\OneDrive\Documents\PersonalProjects\The-Labyrinth\theseus)
-    Finished `release` profile [optimized] target(s) in 1.20s
-     Running `target\release\theseus.exe train-resume --mazes 6`
+    Finished `release` profile [optimized] target(s) in 0.08s
+     Running `target\release\theseus.exe train-resume --hours 12`

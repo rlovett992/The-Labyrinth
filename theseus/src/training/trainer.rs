@@ -8,7 +8,8 @@ use rand::Rng;
 
 use crate::maze::loader::load;
 use crate::maze::maze::Maze;
-use crate::solver::learned;
+use crate::solution::export_checkpoint_comparison_svg;
+use crate::solver::{bfs, dfs, learned, random};
 
 use super::checkpoint::{
     TrainingCheckpoint, clear_checkpoints, current_unix_seconds, load_all_checkpoints,
@@ -18,7 +19,9 @@ use super::example::create_training_examples;
 use super::model::{TheseusModel, TrainingResult};
 use super::teacher::select_teacher;
 
-const MAZE_PATH: &str = "output/maze.json";
+const MAZE_PATH: &str = "output/theseus/checkpoints/maze.json";
+const CHECKPOINT_DIRECTORY: &str = "output/theseus/checkpoints";
+const CHECKPOINT_SLOTS: usize = 5;
 
 const MAX_CONSECUTIVE_FAILURES: usize = 10;
 
@@ -499,6 +502,112 @@ fn run_training_session(previously_completed: u128, limit: TrainingLimit, mut mo
             println!("Stop reason:            Training failure");
         }
     }
+
+    println!();
+    println!("Generating checkpoint comparison SVGs...");
+
+    match generate_checkpoint_svgs() {
+        Ok(generated_count) => {
+            println!(
+                "Generated {generated_count} checkpoint comparison SVG(s)."
+            );
+        }
+        Err(error) => {
+            eprintln!("Failed to generate checkpoint comparison SVGs: {error}");
+        }
+    }
+}
+
+fn generate_checkpoint_svgs() -> Result<usize, String> {
+    fs::create_dir_all(CHECKPOINT_DIRECTORY).map_err(|error| {
+        format!(
+            "could not create checkpoint directory {CHECKPOINT_DIRECTORY}: {error}"
+        )
+    })?;
+
+    let mut generated_count = 0;
+
+    for slot in 1..=CHECKPOINT_SLOTS {
+        let checkpoint_path =
+            format!("{CHECKPOINT_DIRECTORY}/checkpoint_{slot}.json");
+
+        let maze_path =
+            format!("{CHECKPOINT_DIRECTORY}/checkpoint_{slot}_maze.json");
+
+        let svg_path =
+            format!("{CHECKPOINT_DIRECTORY}/checkpoint_{slot}.svg");
+
+        if !std::path::Path::new(&checkpoint_path).exists()
+            || !std::path::Path::new(&maze_path).exists()
+        {
+            if std::path::Path::new(&svg_path).exists() {
+                fs::remove_file(&svg_path).map_err(|error| {
+                    format!(
+                        "could not remove stale SVG {svg_path}: {error}"
+                    )
+                })?;
+            }
+
+            continue;
+        }
+
+        let checkpoint_json =
+            fs::read_to_string(&checkpoint_path).map_err(|error| {
+                format!(
+                    "could not read checkpoint {checkpoint_path}: {error}"
+                )
+            })?;
+
+        let checkpoint: TrainingCheckpoint =
+            serde_json::from_str(&checkpoint_json).map_err(|error| {
+                format!(
+                    "could not parse checkpoint {checkpoint_path}: {error}"
+                )
+            })?;
+
+        let maze = load(&maze_path).map_err(|error| {
+            format!("could not load maze {maze_path}: {error}")
+        })?;
+
+        let theseus_output = learned::solve(&maze, &checkpoint.model);
+        let bfs_output = bfs::solve(&maze);
+        let dfs_output = dfs::solve(&maze);
+        let random_output = random::solve(&maze);
+
+        let solution_path = theseus_output
+            .path
+            .as_deref()
+            .or_else(|| bfs_output.path.as_deref())
+            .or_else(|| dfs_output.path.as_deref())
+            .or_else(|| random_output.path.as_deref())
+            .ok_or_else(|| {
+                format!(
+                    "none of the solvers found a solution for checkpoint slot {slot}"
+                )
+            })?;
+
+        export_checkpoint_comparison_svg(
+            &maze,
+            &theseus_output.trace,
+            &bfs_output.trace,
+            &dfs_output.trace,
+            &random_output.trace,
+            solution_path,
+            &svg_path,
+        )
+        .map_err(|error| {
+            format!("could not write checkpoint SVG {svg_path}: {error}")
+        })?;
+
+        generated_count += 1;
+
+        println!(
+            "  checkpoint_{slot}.svg generated from maze {}",
+            checkpoint.mazes_completed
+        );
+    }
+
+    Ok(generated_count)
 }
 
 fn process_one_maze(maze_number: u128, model: &mut TheseusModel) -> Result<ProcessedMaze, String> {
@@ -673,7 +782,7 @@ fn generate_training_maze() -> io::Result<(Maze, Difficulty)> {
 
     let json = serde_json::to_string_pretty(&generated_maze).map_err(io::Error::other)?;
 
-    fs::create_dir_all("output")?;
+    fs::create_dir_all("output/theseus/checkpoints")?;
     fs::write(MAZE_PATH, json)?;
 
     let maze = load(MAZE_PATH)?;

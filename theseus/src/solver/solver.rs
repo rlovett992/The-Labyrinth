@@ -54,6 +54,8 @@ pub fn mark_solution_path(trace: &mut [SearchStep], path: &[Position]) {
         .collect();
 
     for step in trace {
-        step.on_solution_path = solution_edges.contains(&(step.from, step.to));
+        step.on_solution_path =
+            solution_edges.contains(&(step.from, step.to))
+                || solution_edges.contains(&(step.to, step.from));
     }
 }

@@ -15,7 +15,7 @@ use training::trainer::{
     start_new_training_for_hours, start_new_training_for_mazes, view_training_statistics,
 };
 
-const MAZE_PATH: &str = "output/maze.json";
+const MAZE_PATH: &str = "output/daedalus_maze.json";
 
 fn main() -> ExitCode {
     let arguments: Vec<String> = env::args().skip(1).collect();

@@ -23,7 +23,7 @@ fn main() -> std::io::Result<()> {
 
     fs::create_dir_all("output")?;
 
-    export_json(&maze, "output/maze.json")?;
+    export_json(&maze, "output/daedalus_maze.json")?;
     export_svg(&maze, "output/maze.svg")?;
 
     println!(

@@ -8,6 +8,7 @@ use serde::{Deserialize, Serialize};
 use super::model::TheseusModel;
 
 const CHECKPOINT_DIRECTORY: &str = "output/theseus/checkpoints";
+const CURRENT_MAZE_PATH: &str = "output/theseus/checkpoints/maze.json";
 const CHECKPOINT_SLOTS: usize = 5;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -50,6 +51,26 @@ pub fn save_checkpoint(checkpoint: &TrainingCheckpoint) -> io::Result<PathBuf> {
     }
 
     fs::rename(&temporary, &destination)?;
+
+    let slot = destination
+        .file_stem()
+        .and_then(|name| name.to_str())
+        .and_then(|name| name.strip_prefix("checkpoint_"))
+        .and_then(|number| number.parse::<usize>().ok())
+        .ok_or_else(|| {
+            io::Error::new(
+                io::ErrorKind::InvalidData,
+                "Could not determine checkpoint slot",
+            )
+        })?;
+
+    let maze_destination = checkpoint_maze_path(slot);
+
+    if maze_destination.exists() {
+        fs::remove_file(&maze_destination)?;
+    }
+
+    fs::copy(CURRENT_MAZE_PATH, &maze_destination)?;
 
     Ok(destination)
 }
@@ -94,16 +115,20 @@ pub fn clear_checkpoints() -> io::Result<()> {
     }
 
     for slot in 1..=CHECKPOINT_SLOTS {
-        let path = checkpoint_path(slot);
+        let checkpoint = checkpoint_path(slot);
+        let maze = checkpoint_maze_path(slot);
 
-        if path.exists() {
-            fs::remove_file(path)?;
+        if checkpoint.exists() {
+            fs::remove_file(checkpoint)?;
+        }
+
+        if maze.exists() {
+            fs::remove_file(maze)?;
         }
     }
 
     Ok(())
 }
-
 pub fn current_unix_seconds() -> u64 {
     SystemTime::now()
         .duration_since(UNIX_EPOCH)
@@ -151,4 +176,8 @@ fn read_checkpoint(path: &Path) -> io::Result<TrainingCheckpoint> {
 
 fn checkpoint_path(slot: usize) -> PathBuf {
     Path::new(CHECKPOINT_DIRECTORY).join(format!("checkpoint_{slot}.json"))
+}
+
+fn checkpoint_maze_path(slot: usize) -> PathBuf {
+    Path::new(CHECKPOINT_DIRECTORY).join(format!("checkpoint_{slot}_maze.json"))
 }
