@@ -25,3 +25,6 @@ target
 output/*.json
 output/theseus/checkpoints/*maze.json
 output/maze.json
+
+# Hermes Logs
+output/hermes/training_logs
